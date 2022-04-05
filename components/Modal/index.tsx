@@ -2,19 +2,18 @@
  * @Author: mingwei
  * @Date: 2022-04-05 08:53:27
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-05 19:33:05
+ * @LastEditTime: 2022-04-05 20:40:00
  * @FilePath: /react-native-dev-sdk/components/Modal/index.tsx
  * @Description:
  */
 
 import React from 'react';
 import { Modal } from 'react-native';
-import { ModalProps } from 'react-native';
+import { ModalProps, ViewStyle, StyleProp } from 'react-native';
 import ModalViews from './ModelView';
-import style from './style';
 
 interface DevSdkModalProps extends ModalProps {
-  modelStyle?: any;
+  modelStyle?: StyleProp<ViewStyle>;
 }
 
 const DevSdkModal: React.FC<DevSdkModalProps> = props => {

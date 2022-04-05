@@ -2,16 +2,17 @@
  * @Author: mingwei
  * @Date: 2022-04-05 09:26:56
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-05 10:59:13
+ * @LastEditTime: 2022-04-05 20:41:26
  * @FilePath: /react-native-dev-sdk/components/Modal/ModelView.tsx
  * @Description:
  */
 
 import React from 'react';
 import { Animated } from 'react-native';
+import { ViewStyle, StyleProp } from 'react-native';
 
 interface ModalViewsProps {
-  propStyle: object;
+  propStyle?: StyleProp<ViewStyle>;
 }
 
 const ModalViews: React.FC<ModalViewsProps> = props => {
