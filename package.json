@@ -1,0 +1,23 @@
+{
+  "name": "react-native-dev-sdk",
+  "version": "1.0.0",
+  "description": "react-native-dev-sdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaowei1012/react-native-dev-sdk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaowei1012/react-native-dev-sdk/issues"
+  },
+  "homepage": "https://github.com/gaowei1012/react-native-dev-sdk#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
