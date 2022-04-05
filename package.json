@@ -18,6 +18,12 @@
   },
   "homepage": "https://github.com/gaowei1012/react-native-dev-sdk#readme",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "react": "^18.0.0",
+    "react-native": "^0.68.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.43",
+    "@types/react-native": "^0.67.3"
   }
 }
