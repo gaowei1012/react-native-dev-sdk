@@ -1,19 +1,13 @@
-/*
- * @Author: mingwei
- * @Date: 2022-04-05 08:31:41
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-05 11:05:07
- * @FilePath: /react-native-dev-sdk/example/app.tsx
- * @Description:
- */
 import React from 'react';
-import { SafeAreaView, View, Text } from 'react-native';
-import { Modal } from '../components';
+import { SafeAreaView, View } from 'react-native';
+import { Card } from '../dist';
 
 const App = () => {
   return (
     <SafeAreaView>
-      <Text>app</Text>
+      <View>
+        <Card />
+      </View>
     </SafeAreaView>
   );
 };

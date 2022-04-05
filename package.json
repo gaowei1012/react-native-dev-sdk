@@ -1,17 +1,18 @@
 {
-  "name": "react-native-dev-sdk",
+  "name": "@react-native/react-native-dev-sdk",
   "version": "1.0.0",
   "description": "react-native-dev-sdk",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist && tsc"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gaowei1012/react-native-dev-sdk.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "mingwei",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gaowei1012/react-native-dev-sdk/issues"
@@ -23,7 +24,13 @@
     "react-native": "^0.68.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
     "@types/react": "^17.0.43",
-    "@types/react-native": "^0.67.3"
+    "@types/react-native": "^0.67.3",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "metro-react-native-babel-preset": "^0.67.0"
   }
 }
