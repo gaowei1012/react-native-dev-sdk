@@ -4,7 +4,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "lib": ["es6"],
     "moduleResolution": "node",
     "noEmit": true,
@@ -13,8 +13,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "components/*",
-        "tools/*"
+        "src/*"
       ]
     }
   },
