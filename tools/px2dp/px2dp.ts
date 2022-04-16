@@ -2,8 +2,8 @@
  * @Author: mingwei
  * @Date: 2022-04-16 14:44:16
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-16 14:48:18
- * @FilePath: /react-native-dev-sdk/tools/px2dp.ts
+ * @LastEditTime: 2022-04-16 16:36:52
+ * @FilePath: /react-native-dev-sdk/tools/px2dp/px2dp.ts
  * @Description:
  */
 
