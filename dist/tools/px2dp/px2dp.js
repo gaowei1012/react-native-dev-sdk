@@ -3,7 +3,7 @@
  * @Author: mingwei
  * @Date: 2022-04-16 14:44:16
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-17 21:33:50
+ * @LastEditTime: 2022-04-17 21:47:53
  * @FilePath: /react-native-dev-sdk/src/tools/px2dp/px2dp.ts
  * @Description:
  */
@@ -31,10 +31,9 @@ var Px2dpTools = /** @class */ (function () {
      * 设置像素，根据ui尺寸适配。默认一倍图 375
      * @returns number
      */
-    Px2dpTools.setPx2dp = function (uiEleWidth, defaultWidth) {
+    Px2dpTools.setPixel = function (uiEleWidth, defaultWidth) {
         var width = react_native_1.Dimensions.get('window').width;
         // return (uiEleWidth * width) / 375;
-        console.log('defaultWidth:=>', defaultWidth);
         if (defaultWidth !== undefined) {
             return (uiEleWidth * width) / 375;
         }
