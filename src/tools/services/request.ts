@@ -2,8 +2,8 @@
  * @Author: mingwei
  * @Date: 2022-04-16 21:52:47
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-16 22:18:59
- * @FilePath: /react-native-dev-sdk/tools/services/request.ts
+ * @LastEditTime: 2022-04-17 10:31:22
+ * @FilePath: /react-native-dev-sdk/src/tools/services/request.ts
  * @Description:
  */
 import axios, { AxiosResponse, AxiosError, Method } from 'axios';
