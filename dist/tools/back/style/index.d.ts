@@ -1,6 +1,6 @@
 export declare const backStyle: {
     back: {
-        width: any;
-        height: any;
+        width: number;
+        height: number;
     };
 };
