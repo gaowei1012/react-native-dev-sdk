@@ -3,7 +3,7 @@
  * @Author: mingwei
  * @Date: 2022-04-16 14:44:16
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-17 22:02:35
+ * @LastEditTime: 2022-04-18 17:30:00
  * @FilePath: /react-native-dev-sdk/src/tools/px2dp/px2dp.ts
  * @Description:
  */
@@ -13,6 +13,13 @@ var react_native_1 = require("react-native");
 var Px2dpTools = /** @class */ (function () {
     function Px2dpTools() {
     }
+    /**
+     * 设置ui初始尺寸
+     * @param width number
+     */
+    Px2dpTools.installWidth = function (width) {
+        this.defaultWidth = width;
+    };
     /**
      * 获取设备可见区域宽度
      * @returns number
@@ -31,15 +38,15 @@ var Px2dpTools = /** @class */ (function () {
      * 设置像素，根据ui尺寸适配。默认一倍图 375
      * @returns number
      */
-    Px2dpTools.setPixel = function (uiEleWidth, defaultWidth) {
+    Px2dpTools.setPixel = function (uiEleWidth) {
         var width = react_native_1.Dimensions.get('window').width;
-        // return (uiEleWidth * width) / 375;
-        if (defaultWidth !== undefined) {
-            return (uiEleWidth * width) / 375;
-        }
-        else {
-            return (uiEleWidth * width) / defaultWidth;
-        }
+        console.log('defaultWidth', this.defaultWidth);
+        return (uiEleWidth * width) / this.defaultWidth;
+        // if (defaultWidth !== undefined) {
+        //   return (uiEleWidth * width) / 375;
+        // } else {
+        //   return (uiEleWidth * width) / defaultWidth;
+        // }
     };
     return Px2dpTools;
 }());
