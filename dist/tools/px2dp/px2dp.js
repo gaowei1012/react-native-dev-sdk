@@ -3,7 +3,7 @@
  * @Author: mingwei
  * @Date: 2022-04-16 14:44:16
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-19 07:51:16
+ * @LastEditTime: 2022-04-19 07:54:48
  * @FilePath: /react-native-dev-sdk/src/tools/px2dp/px2dp.ts
  * @Description:
  */
@@ -41,8 +41,8 @@ var Px2dpTools = /** @class */ (function () {
     Px2dpTools.px2dp = function (uiEleWidth) {
         var width = react_native_1.Dimensions.get('window').width;
         console.log('defaultWidth: ==>', this.defaultWidth);
-        return (uiEleWidth * width) / this.defaultWidth;
-        // return (uiEleWidth * width) / 375;
+        // return (uiEleWidth * width) / this.defaultWidth;
+        return (uiEleWidth * width) / 375;
         // if (defaultWidth !== undefined) {
         //   return (uiEleWidth * width) / 375;
         // } else {
