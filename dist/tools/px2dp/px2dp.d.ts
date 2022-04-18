@@ -19,6 +19,6 @@ declare class Px2dpTools {
      * 设置像素，根据ui尺寸适配。默认一倍图 375
      * @returns number
      */
-    static setPixel(uiEleWidth: number): number;
+    static pixel(uiEleWidth: number): number;
 }
 export { Px2dpTools };
