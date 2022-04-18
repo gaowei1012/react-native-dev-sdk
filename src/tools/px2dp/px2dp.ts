@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-04-16 14:44:16
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-18 17:40:45
+ * @LastEditTime: 2022-04-18 17:47:03
  * @FilePath: /react-native-dev-sdk/src/tools/px2dp/px2dp.ts
  * @Description:
  */
@@ -38,7 +38,7 @@ class Px2dpTools {
    * 设置像素，根据ui尺寸适配。默认一倍图 375
    * @returns number
    */
-  static pixel(uiEleWidth: number) {
+  static px2dp(uiEleWidth: number) {
     const width = Dimensions.get('window').width;
     console.log('defaultWidth', this.defaultWidth);
     return (uiEleWidth * width) / this.defaultWidth;
