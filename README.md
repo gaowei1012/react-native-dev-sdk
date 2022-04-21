@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-04-04 23:31:26
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-18 15:01:18
+ * @LastEditTime: 2022-04-21 09:02:43
  * @FilePath: /react-native-dev-sdk/README.md
  * @Description:
 -->
@@ -25,13 +25,13 @@ react-native-dev-sdk
 
 ```tsx
 import { Toast, Px2dpTools } from 'react-native-dev-sdk';
-const { setPx2dp } = Px2dpTools;
+const { px2dp } = Px2dpTools;
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'red',
-    width: setPx2dp(30),
-    height: setPx2dp(30),
+    width: px2dp(30),
+    height: px2dp(30),
   },
 });
 
