@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-04-04 23:31:26
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 09:02:43
+ * @LastEditTime: 2022-04-21 09:41:34
  * @FilePath: /react-native-dev-sdk/README.md
  * @Description:
 -->
@@ -24,6 +24,7 @@ react-native-dev-sdk
 > 使用
 
 ```tsx
+// px2dp
 import { Toast, Px2dpTools } from 'react-native-dev-sdk';
 const { px2dp } = Px2dpTools;
 
@@ -41,4 +42,88 @@ return (
     <Toast />
   </View>
 );
+```
+
+> Storage
+
+```tsx
+import { StorageTools } from 'react-native-dev-sdk';
+
+// 设置缓存
+await StorageTools.setStorage('storage', 'hello');
+
+// 获取缓存
+await StorageTools.getStorage('storage');
+```
+
+> Toast
+
+```tsx
+import { RootToast } from 'react-native-dev-sdk';
+
+// 显示toast
+RootToast.showToast(optoins);
+
+// options
+options = {
+  position,
+  msg,
+  duration,
+  animation,
+  shadow,
+  backgroundColor,
+  containerStyle,
+  onHidden,
+  onPress,
+  onShow,
+  delay,
+};
+```
+
+> navigator 底部导航
+
+```tsx
+import { DynamicTabNavigator, RootNavigatorBottom } from 'react-native-dev-sdk';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
+
+// 导航栏数据
+const tabsdata: TabsType[] = [
+  {
+    route: 'homepage',
+    normalIcon: '',
+    selectIcon: '',
+    components: <></>,
+    title: '首页',
+  },
+  {
+    route: 'profilepage',
+    normalIcon: '',
+    selectIcon: '',
+    components: <></>,
+    title: '设置',
+  },
+];
+
+const RootNavigatorBottomOptions = <RootNavigatorBottom tabs={tabsdata} />;
+
+class HomeScreen {
+  static renderAppStack() {
+    <Stack.Group>
+      <Stack.Screen name="news" component={<>news</>} />
+    </Stack.Group>;
+  }
+}
+
+const renderAppStack = () => {
+  return <>{HomeScreen.renderAppStack()}</>;
+};
+
+<View>
+  <DynamicTabNavigator
+    RootNavigatorBottom={RootNavigatorBottomOptions}
+    children={renderAppStack()}
+  />
+</View>;
 ```

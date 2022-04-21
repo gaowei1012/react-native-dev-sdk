@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-04-18 14:46:25
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-18 14:54:59
+ * @LastEditTime: 2022-04-21 09:32:52
  * @FilePath: /react-native-dev-sdk/src/tools/navigator/DynamicTabNavigator.tsx
  * @Description:
  */
