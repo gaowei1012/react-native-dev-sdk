@@ -3,8 +3,8 @@
  * @Author: mingwei
  * @Date: 2022-04-18 14:42:29
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 09:34:48
- * @FilePath: /react-native-dev-sdk/src/tools/navigator/index.ts
+ * @LastEditTime: 2022-04-21 18:18:03
+ * @FilePath: /react-native-dev-sdk/src/tools/navigator/index.tsx
  * @Description:
  */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -19,4 +19,3 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./DynamicTabNavigator"), exports);
-__exportStar(require("./RootNavigatorBottom"), exports);

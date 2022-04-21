@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-04-18 14:46:25
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 18:13:08
+ * @LastEditTime: 2022-04-21 18:17:16
  * @FilePath: /react-native-dev-sdk/src/tools/navigator/DynamicTabNavigator.tsx
  * @Description:
  */
@@ -13,13 +13,52 @@ import { NavigatorUtils } from '../navigate';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { RootNavigatorBottom } from './RootNavigatorBottom';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { TabBarItem } from './TabBarItem';
 const { initNavihator } = NavigatorUtils;
 
-const Stack = createNativeStackNavigator();
+type TabsType = {
+  title: string;
+  route: string;
+  normalIcon: any;
+  selectIcon: any;
+  components: any;
+};
 
-const DynamicTabNavigator = (props: { children: any }) => {
-  const { children } = props;
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const DynamicTabNavigator = (props: { children: any; tabs: TabsType[] }) => {
+  const { children, tabs } = props;
+
+  const RootNavigatorBottom = () => {
+    return (
+      <>
+        {tabs.map(r => (
+          <Tab.Navigator
+            screenOptions={({ route }) => ({
+              tabBarIcon: ({ focused }) => {
+                if (route.name == r['route']) {
+                  return (
+                    <TabBarItem
+                      focused={focused}
+                      normalIcon={r.normalIcon}
+                      selectIcon={r.selectIcon}
+                    />
+                  );
+                }
+              },
+            })}>
+            <Tab.Screen
+              name={r.route}
+              component={r.components}
+              options={{ tabBarLabel: r.title }}
+            />
+          </Tab.Navigator>
+        ))}
+      </>
+    );
+  };
   return (
     <SafeAreaProvider>
       <NavigationContainer ref={navigatorRef => initNavihator(navigatorRef)}>
