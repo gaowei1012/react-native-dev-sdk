@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-04-18 14:46:25
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 17:08:45
+ * @LastEditTime: 2022-04-21 18:13:08
  * @FilePath: /react-native-dev-sdk/src/tools/navigator/DynamicTabNavigator.tsx
  * @Description:
  */
@@ -13,13 +13,13 @@ import { NavigatorUtils } from '../navigate';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import { RootNavigatorBottom } from './RootNavigatorBottom';
 const { initNavihator } = NavigatorUtils;
 
 const Stack = createNativeStackNavigator();
 
-const DynamicTabNavigator = (props: { children: any; RootNavigatorBottom: any }) => {
-  const { children, RootNavigatorBottom } = props;
+const DynamicTabNavigator = (props: { children: any }) => {
+  const { children } = props;
   return (
     <SafeAreaProvider>
       <NavigationContainer ref={navigatorRef => initNavihator(navigatorRef)}>
