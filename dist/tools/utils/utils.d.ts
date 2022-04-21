@@ -9,5 +9,14 @@ declare class Utils {
      * @param utcDate
      */
     static formatDate(utcDate: string, format: string | 'YYYY-MM-DD hh:ss:mm'): string;
+    /**
+     * 处理数据头部
+     * @param targetData 目标数据
+     * @returns
+     */
+    static formatTargetData(targetData: any[]): {
+        _targetHeaderData: any[];
+        _targetData: any[];
+    };
 }
 export { Utils };

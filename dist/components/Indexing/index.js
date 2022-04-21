@@ -1,10 +1,10 @@
 "use strict";
 /*
  * @Author: mingwei
- * @Date: 2022-04-20 09:46:38
+ * @Date: 2022-04-21 16:36:18
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 16:41:24
- * @FilePath: /react-native-dev-sdk/src/tools/utils/index.ts
+ * @LastEditTime: 2022-04-21 16:56:15
+ * @FilePath: /react-native-dev-sdk/src/components/Indexing/index.tsx
  * @Description:
  */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -18,5 +18,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./utils"), exports);
-__exportStar(require("./pinyinUtil"), exports);
+__exportStar(require("./IndexingView"), exports);
