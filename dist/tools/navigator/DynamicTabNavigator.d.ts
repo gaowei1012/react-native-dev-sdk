@@ -1,6 +1,7 @@
 /// <reference types="react" />
 import 'react-native-gesture-handler';
-export declare function DynamicTabNavigator(props: {
+declare const DynamicTabNavigator: (props: {
     children: any;
     RootNavigatorBottom: any;
-}): JSX.Element;
+}) => JSX.Element;
+export { DynamicTabNavigator };

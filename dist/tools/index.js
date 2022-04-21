@@ -3,7 +3,7 @@
  * @Author: mingwei
  * @Date: 2022-04-16 14:36:12
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-20 09:49:57
+ * @LastEditTime: 2022-04-21 17:10:02
  * @FilePath: /react-native-dev-sdk/src/tools/index.ts
  * @Description:
  */
@@ -24,3 +24,4 @@ __exportStar(require("./toast"), exports);
 __exportStar(require("./storage"), exports);
 __exportStar(require("./services"), exports);
 __exportStar(require("./utils"), exports);
+__exportStar(require("./navigator"), exports);

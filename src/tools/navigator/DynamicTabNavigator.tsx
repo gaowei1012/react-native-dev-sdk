@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-04-18 14:46:25
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 09:32:52
+ * @LastEditTime: 2022-04-21 17:08:45
  * @FilePath: /react-native-dev-sdk/src/tools/navigator/DynamicTabNavigator.tsx
  * @Description:
  */
@@ -18,7 +18,7 @@ const { initNavihator } = NavigatorUtils;
 
 const Stack = createNativeStackNavigator();
 
-export function DynamicTabNavigator(props: { children: any; RootNavigatorBottom: any }) {
+const DynamicTabNavigator = (props: { children: any; RootNavigatorBottom: any }) => {
   const { children, RootNavigatorBottom } = props;
   return (
     <SafeAreaProvider>
@@ -30,4 +30,6 @@ export function DynamicTabNavigator(props: { children: any; RootNavigatorBottom:
       </NavigationContainer>
     </SafeAreaProvider>
   );
-}
+};
+
+export { DynamicTabNavigator };

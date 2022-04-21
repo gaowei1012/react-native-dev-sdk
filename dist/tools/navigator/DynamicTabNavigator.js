@@ -20,8 +20,8 @@ var react_native_safe_area_context_1 = require("react-native-safe-area-context")
 var native_stack_1 = require("@react-navigation/native-stack");
 var initNavihator = navigate_1.NavigatorUtils.initNavihator;
 var Stack = (0, native_stack_1.createNativeStackNavigator)();
-function DynamicTabNavigator(props) {
+var DynamicTabNavigator = function (props) {
     var children = props.children, RootNavigatorBottom = props.RootNavigatorBottom;
     return ((0, jsx_runtime_1.jsx)(react_native_safe_area_context_1.SafeAreaProvider, { children: (0, jsx_runtime_1.jsx)(native_1.NavigationContainer, __assign({ ref: function (navigatorRef) { return initNavihator(navigatorRef); } }, { children: (0, jsx_runtime_1.jsxs)(Stack.Navigator, __assign({ screenOptions: { headerShown: false } }, { children: [(0, jsx_runtime_1.jsx)(Stack.Screen, { name: "root", component: RootNavigatorBottom }, void 0), children] }), void 0) }), void 0) }, void 0));
-}
+};
 exports.DynamicTabNavigator = DynamicTabNavigator;
