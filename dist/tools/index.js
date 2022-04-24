@@ -3,7 +3,7 @@
  * @Author: mingwei
  * @Date: 2022-04-16 14:36:12
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 18:11:40
+ * @LastEditTime: 2022-04-24 22:09:25
  * @FilePath: /react-native-dev-sdk/src/tools/index.ts
  * @Description:
  */
@@ -18,7 +18,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./navigate/navigation"), exports);
+__exportStar(require("./navigate"), exports);
 __exportStar(require("./px2dp"), exports);
 __exportStar(require("./toast"), exports);
 __exportStar(require("./storage"), exports);

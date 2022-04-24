@@ -1,1 +1,2 @@
-export * from './IndexingView';
+import { IndexingView } from './IndexingView';
+export default IndexingView;

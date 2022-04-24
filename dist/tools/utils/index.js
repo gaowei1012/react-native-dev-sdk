@@ -3,7 +3,7 @@
  * @Author: mingwei
  * @Date: 2022-04-20 09:46:38
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 16:41:24
+ * @LastEditTime: 2022-04-24 22:10:30
  * @FilePath: /react-native-dev-sdk/src/tools/utils/index.ts
  * @Description:
  */
@@ -19,4 +19,3 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./utils"), exports);
-__exportStar(require("./pinyinUtil"), exports);

@@ -3,7 +3,7 @@
  * @Author: mingwei
  * @Date: 2022-04-21 16:44:04
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-24 10:47:10
+ * @LastEditTime: 2022-04-24 22:21:27
  * @FilePath: /react-native-dev-sdk/src/components/Indexing/style/index.ts
  * @Description:
  */
@@ -14,14 +14,14 @@ var react_native_1 = require("react-native");
 var IndexingViewStyle = react_native_1.StyleSheet.create({
     treeWrap: {
         flex: 1,
-        width: (0, tools_1.width)(),
-        height: (0, tools_1.height)(),
+        width: tools_1.width,
+        height: tools_1.height,
         backgroundColor: 'rgba(34, 34, 46, 0.39)',
     },
     treeContent: {
         position: 'absolute',
         bottom: 0,
-        width: (0, tools_1.width)(),
+        width: tools_1.width,
         height: (0, tools_1.px2dp)(608),
         backgroundColor: '#fff',
         borderTopLeftRadius: (0, tools_1.px2dp)(6),
@@ -61,7 +61,7 @@ var IndexingViewStyle = react_native_1.StyleSheet.create({
         justifyContent: 'space-between',
     },
     flatlistWrap: {
-        width: (0, tools_1.width)(),
+        width: tools_1.width,
         height: (0, tools_1.px2dp)(508),
     },
     sideBoxWrap: {
