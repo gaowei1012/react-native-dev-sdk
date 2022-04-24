@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-04-21 16:44:04
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-24 10:47:10
+ * @LastEditTime: 2022-04-24 22:21:27
  * @FilePath: /react-native-dev-sdk/src/components/Indexing/style/index.ts
  * @Description:
  */
@@ -13,14 +13,14 @@ import { StyleSheet } from 'react-native';
 const IndexingViewStyle = StyleSheet.create({
   treeWrap: {
     flex: 1,
-    width: width(),
-    height: height(),
+    width,
+    height,
     backgroundColor: 'rgba(34, 34, 46, 0.39)',
   },
   treeContent: {
     position: 'absolute',
     bottom: 0,
-    width: width(),
+    width,
     height: px2dp(608),
     backgroundColor: '#fff',
     borderTopLeftRadius: px2dp(6),
@@ -60,7 +60,7 @@ const IndexingViewStyle = StyleSheet.create({
     justifyContent: 'space-between',
   },
   flatlistWrap: {
-    width: width(),
+    width,
     height: px2dp(508),
   },
   sideBoxWrap: {
