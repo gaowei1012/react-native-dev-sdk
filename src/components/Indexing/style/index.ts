@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-04-21 16:44:04
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 16:45:46
+ * @LastEditTime: 2022-04-24 10:47:10
  * @FilePath: /react-native-dev-sdk/src/components/Indexing/style/index.ts
  * @Description:
  */
@@ -104,9 +104,9 @@ const IndexingViewStyle = StyleSheet.create({
     paddingRight: px2dp(10),
   },
   itemHead: {
-    paddingVertical: px2dp(5),
-    borderBottomColor: 'rgba(211, 211, 211, 0.3)',
-    borderBottomWidth: px2dp(1),
+    paddingVertical: px2dp(10),
+    // borderBottomColor: 'rgba(211, 211, 211, 0.3)',
+    // borderBottomWidth: px2dp(1),
     paddingHorizontal: px2dp(16),
   },
   itemContent: {

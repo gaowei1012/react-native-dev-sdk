@@ -93,8 +93,6 @@ declare const IndexingViewStyle: {
     };
     itemHead: {
         paddingVertical: number;
-        borderBottomColor: string;
-        borderBottomWidth: number;
         paddingHorizontal: number;
     };
     itemContent: {

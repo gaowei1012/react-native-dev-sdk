@@ -65,7 +65,7 @@ var jsx_runtime_1 = require("react/jsx-runtime");
  * @Author: mingwei
  * @Date: 2022-04-21 16:42:37
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-24 10:22:00
+ * @LastEditTime: 2022-04-24 10:47:17
  * @FilePath: /react-native-dev-sdk/src/components/Indexing/IndexingView.tsx
  * @Description:
  */
@@ -124,7 +124,7 @@ var IndexingView = function (props) {
         for (var i = 0; i < data.length; i++) {
             if (i < index) {
                 var value = lodash_1.default.values(data[i])[0];
-                allItem += 30 * value.length + 26;
+                allItem += 30 * value.length + 38;
             }
             else {
                 break;
