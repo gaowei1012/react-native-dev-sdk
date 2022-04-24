@@ -2,13 +2,15 @@
  * @Author: mingwei
  * @Date: 2022-04-20 09:46:43
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 16:41:12
+ * @LastEditTime: 2022-04-24 09:53:31
  * @FilePath: /react-native-dev-sdk/src/tools/utils/utils.ts
  * @Description:
  */
 import moment from 'moment';
 import _ from 'lodash';
-import { PinyinUtil } from './pinyinUtil';
+import cnchar from 'cnchar';
+import 'cnchar-poly';
+import { PolyMap } from '../../config/polyMap';
 class Utils {
   /**
    * 生成A-Z,字符
@@ -31,30 +33,29 @@ class Utils {
   }
 
   /**
-   * 处理数据头部
+   * 处理tree数据，格式为 [{title: 'xxx', id: 'xxx'}, {title: 'xxx', id: 'xxx'}]
    * @param targetData 目标数据
-   * @returns
+   * @returns [A:[{title: 'xx', id:'xx'}],B:[{title: 'xx', id:'xx'}]]
    */
   static formatTargetData(targetData: any[]) {
-    let _targetHeaderData: any[] = [];
-    let _targetData = [...targetData];
-    _.forEach(targetData, org => {
-      const firstLetterStr = PinyinUtil.getFirstLetter(org.title);
-      // const firstLetterStr = pinyin(org.title, { pattern: 'initial', type: 'array' });
-      // console.log('getName', firstLetterStr.substr(0, 1));
-
-      if (_targetHeaderData.indexOf(firstLetterStr) === -1) {
-        _targetHeaderData.push(firstLetterStr);
-        if (_targetData.indexOf(org) > -1) {
-          _targetData.splice(_targetData.indexOf(org), 0, {
-            title: firstLetterStr,
-            head: true,
-          });
-        }
-      }
+    if (targetData.length == 0) return;
+    // 处理多音字
+    cnchar.setSpellDefault(PolyMap);
+    // 按照拼音A-Z排序
+    let _sortTargetData = _.sortBy(targetData, node => {
+      return cnchar.spell(node.title);
     });
-
-    // console.log(_targetHeaderData, _targetData);
+    // 取treeData里面的拼音首字母
+    let _targetHeaderData = _.map(_sortTargetData, (value, key) => {
+      return key;
+    });
+    let _oldTargetData = _.groupBy(_sortTargetData, node => {
+      return cnchar.spell(node.title, 'first')[0];
+    });
+    // 处理数据格式，用于页面渲染
+    let _targetData = _.map(_oldTargetData, (value, key) => {
+      return { [key]: value };
+    });
     return { _targetHeaderData, _targetData };
   }
 }

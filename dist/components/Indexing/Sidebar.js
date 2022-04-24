@@ -20,7 +20,7 @@ var jsx_runtime_1 = require("react/jsx-runtime");
  * @Author: mingwei
  * @Date: 2022-04-21 16:37:00
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 16:42:04
+ * @LastEditTime: 2022-04-24 09:34:15
  * @FilePath: /react-native-dev-sdk/src/components/Indexing/Sidebar.tsx
  * @Description:
  */
@@ -51,7 +51,7 @@ var SideBar = function (_a) {
         setMoveState(true);
         var moveY = evt.nativeEvent.pageY;
         var diff = moveY - moveDownY;
-        var diffKey = diff / 30; // 注意高度一定要获取整数,否则在计算的时候,计算误差
+        var diffKey = diff / 36; // 注意高度一定要获取整数,否则在计算的时候,计算误差
         var keyIndex = tools_1.Utils.getEN().indexOf(moveDownKey);
         var endIndex = keyIndex + diffKey;
         var keyValue = tools_1.Utils.getEN()[endIndex];

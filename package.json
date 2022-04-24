@@ -24,6 +24,8 @@
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.1",
     "axios": "^0.26.1",
+    "cnchar": "^3.0.6",
+    "cnchar-poly": "^3.0.6",
     "lodash": "^4.17.21",
     "moment": "^2.29.3",
     "react": "^18.0.0",

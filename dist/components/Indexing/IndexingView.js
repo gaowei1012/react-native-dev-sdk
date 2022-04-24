@@ -65,7 +65,7 @@ var jsx_runtime_1 = require("react/jsx-runtime");
  * @Author: mingwei
  * @Date: 2022-04-21 16:42:37
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 16:56:02
+ * @LastEditTime: 2022-04-24 10:22:00
  * @FilePath: /react-native-dev-sdk/src/components/Indexing/IndexingView.tsx
  * @Description:
  */
@@ -73,14 +73,20 @@ var react_1 = require("react");
 var react_native_1 = require("react-native");
 var style_1 = require("./style");
 var Sidebar_1 = require("./Sidebar");
+var tools_1 = require("../../tools");
 var lodash_1 = __importDefault(require("lodash"));
 var IndexingView = function (props) {
-    var onCancel = props.onCancel, onSave = props.onSave;
+    var onCancel = props.onCancel, onSave = props.onSave, treeData = props.treeData;
     var _a = (0, react_1.useState)([]), treeSele = _a[0], setTreeSele = _a[1];
     var _b = (0, react_1.useState)([]), targetHeaderData = _b[0], setTargetHeaderData = _b[1];
     var _c = (0, react_1.useState)([]), targetData = _c[0], setTargetData = _c[1];
     var _d = (0, react_1.useState)(false), disabled = _d[0], setDisabled = _d[1];
     var flatListRef = (0, react_1.useRef)(null);
+    (0, react_1.useEffect)(function () {
+        var _a = tools_1.Utils.formatTargetData(treeData), _targetData = _a._targetData, _targetHeaderData = _a._targetHeaderData;
+        setTargetData(__spreadArray([], _targetData, true));
+        setTargetHeaderData(__spreadArray([], _targetHeaderData, true));
+    }, []);
     var chooseNode = function (node) {
         var _treeSele = __spreadArray([], treeSele, true);
         if (_treeSele.length != 0) {
@@ -105,46 +111,39 @@ var IndexingView = function (props) {
             return [2 /*return*/];
         });
     }); };
-    var renderItem = function (_a) {
-        var item = _a.item;
-        return ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: item.head ? ((0, jsx_runtime_1.jsx)(react_native_1.View, __assign({ style: style_1.IndexingViewStyle.itemHead }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Text, __assign({ style: { height: 16 } }, { children: item.title.substr(0, 1) }), void 0) }), void 0)) : ((0, jsx_runtime_1.jsx)(react_native_1.TouchableOpacity, __assign({ activeOpacity: 1, onPress: function () { return chooseNode(item); }, style: style_1.IndexingViewStyle.itemContent }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Text, __assign({ style: { height: 30 } }, { children: item.title }), void 0) }), void 0)) }, void 0));
+    var renderNode = function (item) {
+        var node = Object.values(item)[0];
+        return ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: node.map(function (n) { return ((0, jsx_runtime_1.jsx)(react_native_1.TouchableOpacity, __assign({ activeOpacity: 1, onPress: function () { return chooseNode(n); }, style: style_1.IndexingViewStyle.itemContent }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Text, __assign({ style: { height: 30 } }, { children: n.title }), void 0) }), void 0)); }) }, void 0));
+    };
+    var renderItem = function (node) {
+        return ((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [(0, jsx_runtime_1.jsx)(react_native_1.View, __assign({ style: style_1.IndexingViewStyle.itemHead }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Text, __assign({ style: { height: 16 } }, { children: Object.keys(node.item)[0] }), void 0) }), void 0), renderNode(node.item)] }, void 0));
     };
     var renderItemLayout = function (data, index) {
-        var len = data[index].head ? 16 : 100;
         var allHead = 0;
         var allItem = 0;
         for (var i = 0; i < data.length; i++) {
             if (i < index) {
-                if (data[i].head) {
-                    allHead += 16;
-                }
-                else {
-                    allItem += 30 + 1;
-                }
+                var value = lodash_1.default.values(data[i])[0];
+                allItem += 30 * value.length + 26;
             }
             else {
                 break;
             }
         }
         var offsetAll = allHead + allItem;
-        // console.log('len', len, 'offset', offsetAll, 'index', index);
         return {
-            length: len,
+            length: 0,
             offset: offsetAll,
             index: index,
         };
     };
     var onSelectPress = function (item) {
-        var hasExit = false;
         var preItem = 'A';
         var preIndex = 0;
-        lodash_1.default.map(targetData, function (t, index) {
-            if (t.head) {
-                if (t.title.substr(0, 1) === item) {
-                    hasExit = true;
-                    preIndex = index;
-                    preItem = item;
-                }
+        lodash_1.default.map(targetData, function (value, index) {
+            if (Object.keys(value)[0] === item) {
+                preIndex = index;
+                preItem = item;
             }
         });
         flatListRef.current.scrollToIndex({ viewPosition: 0, index: preIndex });
@@ -154,10 +153,12 @@ var IndexingView = function (props) {
                             }, activeOpacity: 1 }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Text, __assign({ style: style_1.IndexingViewStyle.cancelText }, { children: "\u53D6\u6D88" }), void 0) }), void 0), (0, jsx_runtime_1.jsx)(react_native_1.View, { children: (0, jsx_runtime_1.jsx)(react_native_1.Text, __assign({ style: style_1.IndexingViewStyle.titleText }, { children: "\u8BF7\u9009\u62E9\u793E\u533A" }), void 0) }, void 0), (0, jsx_runtime_1.jsx)(react_native_1.TouchableOpacity, __assign({ disabled: !disabled, onPress: function () { return onSave(treeSele); }, activeOpacity: 1 }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Text, __assign({ style: [
                                     style_1.IndexingViewStyle.affirmText,
                                     disabled ? style_1.IndexingViewStyle.affirmTextAction : null,
-                                ] }, { children: "\u786E\u8BA4" }), void 0) }), void 0)] }), void 0), (0, jsx_runtime_1.jsxs)(react_native_1.View, __assign({ style: style_1.IndexingViewStyle.treeContentWrap }, { children: [(0, jsx_runtime_1.jsxs)(react_native_1.View, { children: [(0, jsx_runtime_1.jsx)(react_native_1.View, __assign({ style: style_1.IndexingViewStyle.treeContentTopWrap }, { children: treeSele.length != 0 ? ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: treeSele.map(function (el, index) { return ((0, jsx_runtime_1.jsx)(react_native_1.TouchableOpacity, __assign({ disabled: treeSele.length == index + 1 ? true : false, activeOpacity: 0.5, onPress: function () { return selectTree(el, index); }, style: style_1.IndexingViewStyle.selectNodeTitle }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Text, __assign({ style: [
+                                ] }, { children: "\u786E\u8BA4" }), void 0) }), void 0)] }), void 0), (0, jsx_runtime_1.jsxs)(react_native_1.View, __assign({ style: style_1.IndexingViewStyle.treeContentWrap }, { children: [(0, jsx_runtime_1.jsxs)(react_native_1.View, { children: [(0, jsx_runtime_1.jsx)(react_native_1.View, __assign({ style: style_1.IndexingViewStyle.treeContentTopWrap }, { children: treeSele.length != 0 ? ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: treeSele.map(function (el, index) { return ((0, jsx_runtime_1.jsx)(react_native_1.TouchableOpacity, __assign({ disabled: treeSele.length != 1 ? (treeSele.length == index + 1 ? true : false) : false, activeOpacity: 0.5, onPress: function () { return selectTree(el, index); }, style: style_1.IndexingViewStyle.selectNodeTitle }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Text, __assign({ style: [
                                                     style_1.IndexingViewStyle.treeContentTopText,
-                                                    treeSele.length == index + 1
-                                                        ? style_1.IndexingViewStyle.treeContentTopTextAction
+                                                    treeData.length != 1
+                                                        ? treeSele.length == index + 1
+                                                            ? style_1.IndexingViewStyle.treeContentTopTextAction
+                                                            : null
                                                         : null,
                                                 ] }, { children: el.title }), void 0) }), el.org_id)); }) }, void 0)) : ((0, jsx_runtime_1.jsx)(react_native_1.Text, __assign({ style: style_1.IndexingViewStyle.pSelectText }, { children: "\u8BF7\u9009\u62E9" }), void 0)) }), void 0), (0, jsx_runtime_1.jsx)(react_native_1.FlatList, { style: style_1.IndexingViewStyle.flatlistWrap, data: targetData, ref: flatListRef, horizontal: false, renderItem: function (item) { return renderItem(item); }, onEndReachedThreshold: 0.5, showsVerticalScrollIndicator: false, getItemLayout: function (data, index) { return renderItemLayout(data, index); }, keyExtractor: function (item, index) {
                                         return index.toString();

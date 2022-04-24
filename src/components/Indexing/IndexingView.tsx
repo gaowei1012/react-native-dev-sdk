@@ -2,24 +2,31 @@
  * @Author: mingwei
  * @Date: 2022-04-21 16:42:37
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 16:56:02
+ * @LastEditTime: 2022-04-24 10:22:00
  * @FilePath: /react-native-dev-sdk/src/components/Indexing/IndexingView.tsx
  * @Description:
  */
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 import { IndexingViewStyle } from './style';
 import { SideBar } from './Sidebar';
+import { Utils } from '../../tools';
 import _ from 'lodash';
 
-const IndexingView: React.FC<{ onCancel: any; onSave: any }> = props => {
-  const { onCancel, onSave } = props;
+const IndexingView: React.FC<{ onCancel: any; onSave: any; treeData: any[] }> = props => {
+  const { onCancel, onSave, treeData } = props;
   const [treeSele, setTreeSele] = useState<any[]>([]);
   const [targetHeaderData, setTargetHeaderData] = useState<any[]>([]);
   const [targetData, setTargetData] = useState<any[]>([]);
   const [disabled, setDisabled] = useState<boolean>(false);
   const flatListRef: any = useRef(null);
+
+  useEffect(() => {
+    const { _targetData, _targetHeaderData } = Utils.formatTargetData(treeData);
+    setTargetData([..._targetData]);
+    setTargetHeaderData([..._targetHeaderData]);
+  }, []);
 
   const chooseNode = (node: any) => {
     let _treeSele = [...treeSele];
@@ -41,61 +48,61 @@ const IndexingView: React.FC<{ onCancel: any; onSave: any }> = props => {
     setDisabled(el.isLeaf);
   };
 
-  const renderItem = ({ item }) => {
+  const renderNode = (item: any) => {
+    const node: any = Object.values(item)[0];
     return (
       <>
-        {item.head ? (
-          <View style={IndexingViewStyle.itemHead}>
-            <Text style={{ height: 16 }}>{item.title.substr(0, 1)}</Text>
-          </View>
-        ) : (
+        {node.map((n: any) => (
           <TouchableOpacity
             activeOpacity={1}
-            onPress={() => chooseNode(item)}
+            onPress={() => chooseNode(n)}
             style={IndexingViewStyle.itemContent}>
-            <Text style={{ height: 30 }}>{item.title}</Text>
+            <Text style={{ height: 30 }}>{n.title}</Text>
           </TouchableOpacity>
-        )}
+        ))}
+      </>
+    );
+  };
+
+  const renderItem = (node: { item: any }) => {
+    return (
+      <>
+        <View style={IndexingViewStyle.itemHead}>
+          <Text style={{ height: 16 }}>{Object.keys(node.item)[0]}</Text>
+        </View>
+        {renderNode(node.item)}
       </>
     );
   };
 
   const renderItemLayout = (data: any, index: number) => {
-    let len = data[index].head ? 16 : 100;
     let allHead = 0;
     let allItem = 0;
+
     for (let i = 0; i < data.length; i++) {
       if (i < index) {
-        if (data[i].head) {
-          allHead += 16;
-        } else {
-          allItem += 30 + 1;
-        }
+        let value = _.values(data[i])[0];
+        allItem += 30 * value.length + 26;
       } else {
         break;
       }
     }
     let offsetAll = allHead + allItem;
-    // console.log('len', len, 'offset', offsetAll, 'index', index);
     return {
-      length: len,
+      length: 0,
       offset: offsetAll,
       index,
     };
   };
 
   const onSelectPress = (item: any) => {
-    let hasExit = false;
     let preItem = 'A';
     let preIndex = 0;
 
-    _.map(targetData, (t: any, index: any) => {
-      if (t.head) {
-        if (t.title.substr(0, 1) === item) {
-          hasExit = true;
-          preIndex = index;
-          preItem = item;
-        }
+    _.map(targetData, (value: any, index: number) => {
+      if (Object.keys(value)[0] === item) {
+        preIndex = index;
+        preItem = item;
       }
     });
 
@@ -133,7 +140,9 @@ const IndexingView: React.FC<{ onCancel: any; onSave: any }> = props => {
                 <>
                   {treeSele.map((el, index) => (
                     <TouchableOpacity
-                      disabled={treeSele.length == index + 1 ? true : false}
+                      disabled={
+                        treeSele.length != 1 ? (treeSele.length == index + 1 ? true : false) : false
+                      }
                       activeOpacity={0.5}
                       onPress={() => selectTree(el, index)}
                       style={IndexingViewStyle.selectNodeTitle}
@@ -141,8 +150,10 @@ const IndexingView: React.FC<{ onCancel: any; onSave: any }> = props => {
                       <Text
                         style={[
                           IndexingViewStyle.treeContentTopText,
-                          treeSele.length == index + 1
-                            ? IndexingViewStyle.treeContentTopTextAction
+                          treeData.length != 1
+                            ? treeSele.length == index + 1
+                              ? IndexingViewStyle.treeContentTopTextAction
+                              : null
                             : null,
                         ]}>
                         {el.title}

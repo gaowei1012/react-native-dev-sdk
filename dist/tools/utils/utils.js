@@ -1,13 +1,4 @@
 "use strict";
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -17,13 +8,15 @@ exports.Utils = void 0;
  * @Author: mingwei
  * @Date: 2022-04-20 09:46:43
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 16:41:12
+ * @LastEditTime: 2022-04-24 09:53:31
  * @FilePath: /react-native-dev-sdk/src/tools/utils/utils.ts
  * @Description:
  */
 var moment_1 = __importDefault(require("moment"));
 var lodash_1 = __importDefault(require("lodash"));
-var pinyinUtil_1 = require("./pinyinUtil");
+var cnchar_1 = __importDefault(require("cnchar"));
+require("cnchar-poly");
+var polyMap_1 = require("../../config/polyMap");
 var Utils = /** @class */ (function () {
     function Utils() {
     }
@@ -47,28 +40,31 @@ var Utils = /** @class */ (function () {
         return (0, moment_1.default)(date).format(format);
     };
     /**
-     * 处理数据头部
+     * 处理tree数据，格式为 [{title: 'xxx', id: 'xxx'}, {title: 'xxx', id: 'xxx'}]
      * @param targetData 目标数据
-     * @returns
+     * @returns [A:[{title: 'xx', id:'xx'}],B:[{title: 'xx', id:'xx'}]]
      */
     Utils.formatTargetData = function (targetData) {
-        var _targetHeaderData = [];
-        var _targetData = __spreadArray([], targetData, true);
-        lodash_1.default.forEach(targetData, function (org) {
-            var firstLetterStr = pinyinUtil_1.PinyinUtil.getFirstLetter(org.title);
-            // const firstLetterStr = pinyin(org.title, { pattern: 'initial', type: 'array' });
-            // console.log('getName', firstLetterStr.substr(0, 1));
-            if (_targetHeaderData.indexOf(firstLetterStr) === -1) {
-                _targetHeaderData.push(firstLetterStr);
-                if (_targetData.indexOf(org) > -1) {
-                    _targetData.splice(_targetData.indexOf(org), 0, {
-                        title: firstLetterStr,
-                        head: true,
-                    });
-                }
-            }
+        if (targetData.length == 0)
+            return;
+        // 处理多音字
+        cnchar_1.default.setSpellDefault(polyMap_1.PolyMap);
+        // 按照拼音A-Z排序
+        var _sortTargetData = lodash_1.default.sortBy(targetData, function (node) {
+            return cnchar_1.default.spell(node.title);
         });
-        // console.log(_targetHeaderData, _targetData);
+        // 取treeData里面的拼音首字母
+        var _targetHeaderData = lodash_1.default.map(_sortTargetData, function (value, key) {
+            return key;
+        });
+        var _oldTargetData = lodash_1.default.groupBy(_sortTargetData, function (node) {
+            return cnchar_1.default.spell(node.title, 'first')[0];
+        });
+        // 处理数据格式，用于页面渲染
+        var _targetData = lodash_1.default.map(_oldTargetData, function (value, key) {
+            var _a;
+            return _a = {}, _a[key] = value, _a;
+        });
         return { _targetHeaderData: _targetHeaderData, _targetData: _targetData };
     };
     return Utils;

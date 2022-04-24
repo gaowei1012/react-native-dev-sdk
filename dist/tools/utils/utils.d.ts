@@ -1,3 +1,4 @@
+import 'cnchar-poly';
 declare class Utils {
     /**
      * 生成A-Z,字符
@@ -10,13 +11,13 @@ declare class Utils {
      */
     static formatDate(utcDate: string, format: string | 'YYYY-MM-DD hh:ss:mm'): string;
     /**
-     * 处理数据头部
+     * 处理tree数据，格式为 [{title: 'xxx', id: 'xxx'}, {title: 'xxx', id: 'xxx'}]
      * @param targetData 目标数据
-     * @returns
+     * @returns [A:[{title: 'xx', id:'xx'}],B:[{title: 'xx', id:'xx'}]]
      */
     static formatTargetData(targetData: any[]): {
-        _targetHeaderData: any[];
-        _targetData: any[];
+        _targetHeaderData: any;
+        _targetData: any;
     };
 }
 export { Utils };
