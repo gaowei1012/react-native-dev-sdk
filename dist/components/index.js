@@ -3,7 +3,7 @@
  * @Author: mingwei
  * @Date: 2022-04-05 11:03:01
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-24 22:22:30
+ * @LastEditTime: 2022-04-24 23:02:05
  * @FilePath: /react-native-dev-sdk/src/components/index.ts
  * @Description:
  */
@@ -11,7 +11,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IndexingView = exports.Empty = exports.Toast = exports.Card = exports.TextInput = exports.Modal = void 0;
+exports.Loading = exports.IndexingView = exports.Empty = exports.Toast = exports.Card = exports.TextInput = exports.Modal = void 0;
 var index_1 = require("./Modal/index");
 Object.defineProperty(exports, "Modal", { enumerable: true, get: function () { return __importDefault(index_1).default; } });
 var index_2 = require("./TextInput/index");
@@ -24,3 +24,5 @@ var index_5 = require("./Empty/index");
 Object.defineProperty(exports, "Empty", { enumerable: true, get: function () { return __importDefault(index_5).default; } });
 var index_6 = require("./Indexing/index");
 Object.defineProperty(exports, "IndexingView", { enumerable: true, get: function () { return __importDefault(index_6).default; } });
+var index_7 = require("./Loading/index");
+Object.defineProperty(exports, "Loading", { enumerable: true, get: function () { return __importDefault(index_7).default; } });
