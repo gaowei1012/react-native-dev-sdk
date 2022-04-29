@@ -26,6 +26,7 @@
     "axios": "^0.26.1",
     "cnchar": "^3.0.6",
     "cnchar-poly": "^3.0.6",
+    "colorsys": "^1.0.22",
     "lodash": "^4.17.21",
     "moment": "^2.29.3",
     "react": "^18.0.0",
