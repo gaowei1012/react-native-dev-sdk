@@ -3,7 +3,7 @@
  * @Author: mingwei
  * @Date: 2022-04-05 11:03:01
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-29 16:50:26
+ * @LastEditTime: 2022-04-29 16:55:31
  * @FilePath: /react-native-dev-sdk/src/components/index.ts
  * @Description:
  */
@@ -20,7 +20,6 @@ var index_3 = require("./Card/index");
 Object.defineProperty(exports, "Card", { enumerable: true, get: function () { return __importDefault(index_3).default; } });
 var index_4 = require("./Toast/index");
 Object.defineProperty(exports, "Toast", { enumerable: true, get: function () { return __importDefault(index_4).default; } });
-// export { default as Empty } from './Empty/index';
 var index_5 = require("./Indexing/index");
 Object.defineProperty(exports, "IndexingView", { enumerable: true, get: function () { return __importDefault(index_5).default; } });
 var index_6 = require("./Loading/index");
