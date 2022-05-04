@@ -6,3 +6,4 @@ export { default as IndexingView } from './Indexing/index';
 export { default as Loading } from './Loading/index';
 export { default as TopNavigationBar } from './TopNavigationBar/index';
 export { default as TabBarItem } from './TabBarItem';
+export { default as Button } from './Button';
