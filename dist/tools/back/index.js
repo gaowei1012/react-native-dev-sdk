@@ -16,8 +16,8 @@ var react_native_1 = require("react-native");
 var navigate_1 = require("../navigate");
 var style_1 = require("./style");
 var GoBack = function (props) {
-    var action = props.action, url = props.url;
+    var action = props.action;
     action = action ? action : function () { return navigate_1.NavigatorUtils.back(); };
-    return ((0, jsx_runtime_1.jsx)(react_native_1.TouchableOpacity, __assign({ activeOpacity: 1, onPress: action }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Image, { style: style_1.backStyle.back, source: url }, void 0) }), void 0));
+    return ((0, jsx_runtime_1.jsx)(react_native_1.TouchableOpacity, __assign({ activeOpacity: 1, onPress: action }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Image, { style: style_1.backStyle.back, source: require('./assets/back.png') }, void 0) }), void 0));
 };
 exports.default = GoBack;

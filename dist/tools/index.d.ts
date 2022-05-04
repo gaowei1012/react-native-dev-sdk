@@ -6,3 +6,4 @@ export * from './services';
 export * from './utils';
 export * from './navigator';
 export * from './validator';
+export * from './back';
