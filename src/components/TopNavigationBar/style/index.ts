@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-04-29 17:15:38
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-29 17:16:39
+ * @LastEditTime: 2022-05-04 17:26:10
  * @FilePath: /react-native-dev-sdk/src/components/topNavigationBar/style/index.ts
  * @Description:
  */
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   container: {
-    backgroundColor: '#fff', // 设置背景颜色
+    // backgroundColor: '#fff', // 设置背景颜色
   },
   title: {
     width: px2dp(200),
