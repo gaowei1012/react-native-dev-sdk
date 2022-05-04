@@ -5,7 +5,7 @@ exports.styles = exports.nav_bar_h = exports.status_bar_h = void 0;
  * @Author: mingwei
  * @Date: 2022-04-29 17:15:38
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-29 17:16:39
+ * @LastEditTime: 2022-05-04 17:26:10
  * @FilePath: /react-native-dev-sdk/src/components/topNavigationBar/style/index.ts
  * @Description:
  */
@@ -31,7 +31,7 @@ var styles = react_native_1.StyleSheet.create({
         alignItems: 'center',
     },
     container: {
-        backgroundColor: '#fff', // 设置背景颜色
+    // backgroundColor: '#fff', // 设置背景颜色
     },
     title: {
         width: (0, tools_1.px2dp)(200),

@@ -15,9 +15,7 @@ declare const styles: {
     navBarButton: {
         alignItems: "center";
     };
-    container: {
-        backgroundColor: string;
-    };
+    container: {};
     title: {
         width: number;
         fontWeight: "bold";
