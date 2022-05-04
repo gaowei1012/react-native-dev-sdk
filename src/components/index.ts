@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-04-05 11:03:01
  * @LastEditors: mingwei
- * @LastEditTime: 2022-05-04 15:15:42
+ * @LastEditTime: 2022-05-04 17:36:53
  * @FilePath: /react-native-dev-sdk/src/components/index.ts
  * @Description:
  */
@@ -15,3 +15,4 @@ export { default as IndexingView } from './Indexing/index';
 export { default as Loading } from './Loading/index';
 export { default as TopNavigationBar } from './TopNavigationBar/index';
 export { default as TabBarItem } from './TabBarItem';
+export { default as Button } from './Button';
