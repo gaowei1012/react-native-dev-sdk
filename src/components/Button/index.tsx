@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-05-04 17:35:25
  * @LastEditors: mingwei
- * @LastEditTime: 2022-05-04 17:36:26
+ * @LastEditTime: 2022-05-05 09:13:21
  * @FilePath: /react-native-dev-sdk/src/components/Button/index.tsx
  * @Description:
  */
@@ -17,10 +17,14 @@ type buttonType = {
   type?: string | 'default';
 };
 
+const buttonOptions = {
+  default: 'default',
+};
+
 const Button: React.FC<buttonType> = ({ text, onPress, buttonPropsStyle, type }) => {
   const platform = Platform.OS == 'ios' ? true : false;
 
-  const theme = type == 'default' ? buttonStyle.default : '';
+  const theme = type == 'default' ? buttonOptions[type] : '';
 
   const renderIosButton = () => (
     <TouchableOpacity
@@ -32,7 +36,7 @@ const Button: React.FC<buttonType> = ({ text, onPress, buttonPropsStyle, type })
   );
 
   const renderAndroidButton = () => (
-    <View style={[buttonStyle.wrap, buttonPropsStyle]}>
+    <View style={[buttonStyle.wrap, theme, buttonPropsStyle]}>
       <TouchableNativeFeedback onPress={onPress}>
         <Text>{text}</Text>
       </TouchableNativeFeedback>
