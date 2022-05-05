@@ -19,5 +19,6 @@ declare class Utils {
         _targetHeaderData: any;
         _targetData: any;
     };
+    static platform(): boolean;
 }
 export { Utils };

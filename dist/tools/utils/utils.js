@@ -8,7 +8,7 @@ exports.Utils = void 0;
  * @Author: mingwei
  * @Date: 2022-04-20 09:46:43
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-24 09:53:31
+ * @LastEditTime: 2022-05-05 09:45:30
  * @FilePath: /react-native-dev-sdk/src/tools/utils/utils.ts
  * @Description:
  */
@@ -17,6 +17,7 @@ var lodash_1 = __importDefault(require("lodash"));
 var cnchar_1 = __importDefault(require("cnchar"));
 require("cnchar-poly");
 var polyMap_1 = require("../../config/polyMap");
+var react_native_1 = require("react-native");
 var Utils = /** @class */ (function () {
     function Utils() {
     }
@@ -66,6 +67,10 @@ var Utils = /** @class */ (function () {
             return _a = {}, _a[key] = value, _a;
         });
         return { _targetHeaderData: _targetHeaderData, _targetData: _targetData };
+    };
+    // 判断机型平台
+    Utils.platform = function () {
+        return react_native_1.Platform.OS === 'ios' ? true : false;
     };
     return Utils;
 }());
