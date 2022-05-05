@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-04-20 09:46:43
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-24 09:53:31
+ * @LastEditTime: 2022-05-05 09:45:30
  * @FilePath: /react-native-dev-sdk/src/tools/utils/utils.ts
  * @Description:
  */
@@ -11,6 +11,7 @@ import _ from 'lodash';
 import cnchar from 'cnchar';
 import 'cnchar-poly';
 import { PolyMap } from '../../config/polyMap';
+import { Platform } from 'react-native';
 class Utils {
   /**
    * 生成A-Z,字符
@@ -57,6 +58,11 @@ class Utils {
       return { [key]: value };
     });
     return { _targetHeaderData, _targetData };
+  }
+
+  // 判断机型平台
+  static platform() {
+    return Platform.OS === 'ios' ? true : false;
   }
 }
 
