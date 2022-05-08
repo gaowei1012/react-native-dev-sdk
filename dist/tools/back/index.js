@@ -15,7 +15,6 @@ var jsx_runtime_1 = require("react/jsx-runtime");
 var react_native_1 = require("react-native");
 var navigate_1 = require("../navigate");
 var style_1 = require("./style");
-// const BackIcon = require('./assets/back.png');
 var GoBack = function (props) {
     var action = props.action, url = props.url;
     action = action ? action : function () { return navigate_1.NavigatorUtils.back(); };
