@@ -25,8 +25,7 @@ react-native-dev-sdk
 
 ```tsx
 // px2dp
-import { Toast, Px2dpTools } from 'react-native-dev-sdk';
-const { px2dp } = Px2dpTools;
+import { Toast, px2dp } from 'react-native-dev-sdk';
 
 const styles = StyleSheet.create({
   container: {
@@ -80,50 +79,81 @@ options = {
 };
 ```
 
-> navigator 底部导航
+> DynamicTabNavigate.tsx 底部导航
 
 ```tsx
-import { DynamicTabNavigator, RootNavigatorBottom } from 'react-native-dev-sdk';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigatorUtils } from 'react-native-sdk';
+import * as React from 'react';
+
+import { RootNavigatorBottom } from './RootNavigatorBottom';
+import { Login, Register } from '@/pages/user';
+import NotesPage from '@/pages/notes';
 
 const Stack = createNativeStackNavigator();
 
-// 导航栏数据
-const tabsdata: TabsType[] = [
-  {
-    route: 'homepage',
-    normalIcon: '',
-    selectIcon: '',
-    components: <></>,
-    title: '首页',
-  },
-  {
-    route: 'profilepage',
-    normalIcon: '',
-    selectIcon: '',
-    components: <></>,
-    title: '设置',
-  },
-];
-
-const RootNavigatorBottomOptions = <RootNavigatorBottom tabs={tabsdata} />;
-
-class HomeScreen {
-  static renderAppStack() {
-    <Stack.Group>
-      <Stack.Screen name="news" component={<>news</>} />
-    </Stack.Group>;
-  }
+export default function DynamicTabNavigator() {
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer ref={navigatorRef => NavigatorUtils.initNavihator(navigatorRef)}>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+           <!-- 这里要配置基本路由 -->
+          <Stack.Screen name="root" component={RootNavigatorBottom} />
+          <Stack.Screen name="notes" component={NotesPage} />
+          <Stack.Screen name="login" component={Login} />
+          <Stack.Screen name="register" component={Register} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
 }
+```
 
-const renderAppStack = () => {
-  return <>{HomeScreen.renderAppStack()}</>;
+> RootNavigatorBottom.tsx
+
+```tsx
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { HomeScreen, ProfileScreen } from './screen';
+import { TabBarItem } from 'react-native-sdk';
+
+const Tab = createBottomTabNavigator();
+
+const RootNavigatorBottom: React.FC<{}> = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused }) => {
+          if (route.name === 'home') {
+            return (
+              <TabBarItem
+                focused={focused}
+                normalIcon={require('../assets/tab/home.png')}
+                selectIcon={require('../assets/tab/ac_home.png')}
+              />
+            );
+          } else if (route.name === 'profile') {
+            return (
+              <TabBarItem
+                focused={focused}
+                normalIcon={require('../assets/tab/dynamic.png')}
+                selectIcon={require('../assets/tab/ac_dynamic.png')}
+              />
+            );
+          }
+        },
+        tabBarActiveTintColor: 'tomato',
+        tabBarInactiveTintColor: 'gray',
+        headerShown: false,
+      })}>
+      <Tab.Screen name="home" component={HomeScreen} options={{ tabBarLabel: 'notes' }} />
+      <Tab.Screen name="profile" component={ProfileScreen} options={{ tabBarLabel: 'profile' }} />
+    </Tab.Navigator>
+  );
 };
 
-<View>
-  <DynamicTabNavigator
-    RootNavigatorBottom={RootNavigatorBottomOptions}
-    children={renderAppStack()}
-  />
-</View>;
+export { RootNavigatorBottom };
 ```
