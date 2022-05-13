@@ -25,8 +25,7 @@ react-native-dev-sdk
 
 ```tsx
 // px2dp
-import { Toast, Px2dpTools } from 'react-native-dev-sdk';
-const { px2dp } = Px2dpTools;
+import { Toast, px2dp } from 'react-native-dev-sdk';
 
 const styles = StyleSheet.create({
   container: {
