@@ -1,5 +1,5 @@
 {
-  "name": "@react-native/react-native-dev-sdk",
+  "name": "react-native-dev-sdk",
   "version": "1.0.0",
   "description": "react-native-dev-sdk",
   "main": "./dist/index.js",
@@ -11,9 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/gaowei1012/react-native-dev-sdk.git"
   },
-  "keywords": [],
-  "author": "mingwei",
-  "license": "ISC",
+  "keywords": ["react-native-dev-sdk"],
+  "author": "zhinian1024",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gaowei1012/react-native-dev-sdk/issues"
   },
