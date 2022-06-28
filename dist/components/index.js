@@ -3,7 +3,7 @@
  * @Author: mingwei
  * @Date: 2022-04-05 11:03:01
  * @LastEditors: mingwei
- * @LastEditTime: 2022-05-04 17:36:53
+ * @LastEditTime: 2022-06-28 09:17:57
  * @FilePath: /react-native-dev-sdk/src/components/index.ts
  * @Description:
  */
@@ -11,7 +11,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Button = exports.TabBarItem = exports.TopNavigationBar = exports.Loading = exports.IndexingView = exports.Toast = exports.Card = exports.TextInput = exports.Modal = void 0;
+exports.Dialog = exports.Button = exports.TabBarItem = exports.TopNavigationBar = exports.Loading = exports.IndexingView = exports.Toast = exports.Card = exports.TextInput = exports.Modal = void 0;
 var index_1 = require("./Modal/index");
 Object.defineProperty(exports, "Modal", { enumerable: true, get: function () { return __importDefault(index_1).default; } });
 var index_2 = require("./TextInput/index");
@@ -30,3 +30,5 @@ var TabBarItem_1 = require("./TabBarItem");
 Object.defineProperty(exports, "TabBarItem", { enumerable: true, get: function () { return __importDefault(TabBarItem_1).default; } });
 var Button_1 = require("./Button");
 Object.defineProperty(exports, "Button", { enumerable: true, get: function () { return __importDefault(Button_1).default; } });
+var Dialog_1 = require("./Dialog");
+Object.defineProperty(exports, "Dialog", { enumerable: true, get: function () { return __importDefault(Dialog_1).default; } });

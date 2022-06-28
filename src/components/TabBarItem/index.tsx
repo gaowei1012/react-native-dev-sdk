@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-05-04 15:11:08
  * @LastEditors: mingwei
- * @LastEditTime: 2022-05-04 15:15:13
+ * @LastEditTime: 2022-06-28 17:57:37
  * @FilePath: /react-native-dev-sdk/src/components/TabBarItem/index.tsx
  * @Description:
  */
@@ -16,6 +16,7 @@ export type ITabBarItemType = {
   selectIcon?: string;
   normalIcon?: string;
   focused?: boolean;
+  customize?: any;
 };
 
 const TabBarItem: React.FC<ITabBarItemType> = props => {
@@ -23,7 +24,7 @@ const TabBarItem: React.FC<ITabBarItemType> = props => {
   return (
     <Image
       resizeMode="contain"
-      style={[TabBarItemStyle.container, { tintColor: props.tintColor }]}
+      style={[TabBarItemStyle.container, { tintColor: props.tintColor }, props.customize]}
       source={imgUrl}
     />
   );
