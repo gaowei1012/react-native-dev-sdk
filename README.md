@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-04-04 23:31:26
  * @LastEditors: mingwei
- * @LastEditTime: 2022-04-26 17:03:25
+ * @LastEditTime: 2022-06-30 15:42:57
  * @FilePath: /react-native-dev-sdk/README.md
  * @Description:
 -->
@@ -16,7 +16,7 @@ react-native-dev-sdk
 安装依赖使用，安装需要将 dev 嵌入项目
 
 ```
-  npm i @react-native-async-storage/async-storage @react-navigation/native axios react-native-root-toast @react-navigation/native-stack @react-navigation/bottom-tabs react-native-gesture-handler react-native-safe-area-context react-native-screens validator --save
+  npm i @react-native-async-storage/async-storage @react-navigation/native axios react-native-root-toast @react-navigation/native-stack @react-navigation/bottom-tabs react-native-gesture-handler react-native-safe-area-context react-native-screens validator react-native-svg --save
 ```
 
 在项目 ios 目录下，执行 pod isntall
