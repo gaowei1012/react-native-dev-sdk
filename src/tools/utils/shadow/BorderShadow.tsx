@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-06-30 15:28:01
  * @LastEditors: mingwei
- * @LastEditTime: 2022-06-30 15:53:21
+ * @LastEditTime: 2022-07-01 09:11:17
  * @FilePath: /react-native-dev-sdk/src/tools/utils/shadow/BorderShadow.tsx
  * @Description:
  */
@@ -98,7 +98,6 @@ export class BorderShadow extends Component<{ setting: BorderSettingShadowType; 
               ];
             default:
               throw new Error("Wrong Type of Side! We just support 'top' and 'bottom'");
-              return null;
           }
         })()}
       </View>
