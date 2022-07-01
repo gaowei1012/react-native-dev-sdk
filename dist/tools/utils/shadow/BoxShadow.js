@@ -51,7 +51,7 @@ var jsx_runtime_1 = require("react/jsx-runtime");
  * @Author: mingwei
  * @Date: 2022-06-30 15:28:29
  * @LastEditors: mingwei
- * @LastEditTime: 2022-06-30 15:52:09
+ * @LastEditTime: 2022-07-01 09:11:29
  * @FilePath: /react-native-dev-sdk/src/tools/utils/shadow/BoxShadow.tsx
  * @Description:
  */
@@ -68,7 +68,6 @@ var BoxShadow = /** @class */ (function (_super) {
             var _a = _this.props, _b = _a.setting, _c = _b.width, width = _c === void 0 ? 0 : _c, _d = _b.height, height = _d === void 0 ? 0 : _d, _e = _b.color, color = _e === void 0 ? '#000' : _e, _f = _b.border, border = _f === void 0 ? 0 : _f, _g = _b.radius, radius = _g === void 0 ? 0 : _g, _h = _b.opacity, opacity = _h === void 0 ? 1 : _h, _j = _b.x, x = _j === void 0 ? 0 : _j, _k = _b.y, y = _k === void 0 ? 0 : _k, _l = _b.style, style = _l === void 0 ? {} : _l, children = _a.children;
             //define the lengths
             var lineWidth = border, rectWidth = width - radius * 2, rectHeight = height - radius * 2;
-            //update 2017-03-04
             //format the color
             var rgb = (0, tools_1.colorRgb)(color);
             //the same parts for gradients

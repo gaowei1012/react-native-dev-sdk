@@ -2,7 +2,7 @@
  * @Author: mingwei
  * @Date: 2022-06-30 15:28:29
  * @LastEditors: mingwei
- * @LastEditTime: 2022-06-30 15:52:09
+ * @LastEditTime: 2022-07-01 09:11:29
  * @FilePath: /react-native-dev-sdk/src/tools/utils/shadow/BoxShadow.tsx
  * @Description:
  */
@@ -45,8 +45,6 @@ export class BoxShadow extends Component<{ setting: BoxSettingShadowType; childr
     const lineWidth = border,
       rectWidth = width - radius * 2,
       rectHeight = height - radius * 2;
-
-    //update 2017-03-04
     //format the color
     let rgb = colorRgb(color);
 
