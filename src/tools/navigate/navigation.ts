@@ -1,12 +1,3 @@
-/*
- * @Author: mingwei
- * @Date: 2022-04-16 14:40:00
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-16 16:29:34
- * @FilePath: /react-native-dev-sdk/tools/navigate/navigation.ts
- * @Description:
- */
-
 import { CommonActions, StackActions } from '@react-navigation/native';
 
 class NavigatorUtils {

@@ -1,12 +1,4 @@
 "use strict";
-/*
- * @Author: mingwei
- * @Date: 2022-04-16 14:40:00
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-16 16:29:34
- * @FilePath: /react-native-dev-sdk/tools/navigate/navigation.ts
- * @Description:
- */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NavigatorUtils = void 0;
 var native_1 = require("@react-navigation/native");

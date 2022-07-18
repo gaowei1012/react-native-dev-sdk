@@ -1,11 +1,3 @@
-/*
- * @Author: mingwei
- * @Date: 2022-04-16 15:34:44
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-16 15:53:30
- * @FilePath: /react-native-dev-sdk/tools/storage/Storage.ts
- * @Description:
- */
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 class StorageTools {
@@ -41,13 +33,13 @@ class StorageTools {
    * @param key 存入的Storage名称
    * @param value 存入的数据
    */
-  // static async moregeStorage(key: string, value: any) {
-  //   try {
-  //     await AsyncStorage.mergeItem(key, JSON.stringify(value));
-  //   } catch (e) {
-  //     throw e;
-  //   }
-  // }
+  static async moregeStorage(key: string, value: any) {
+    try {
+      await AsyncStorage.mergeItem(key, JSON.stringify(value));
+    } catch (e) {
+      throw e;
+    }
+  }
 
   /**
    * 清除全部缓存

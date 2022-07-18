@@ -40,14 +40,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StorageTools = void 0;
-/*
- * @Author: mingwei
- * @Date: 2022-04-16 15:34:44
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-16 15:53:30
- * @FilePath: /react-native-dev-sdk/tools/storage/Storage.ts
- * @Description:
- */
 var async_storage_1 = __importDefault(require("@react-native-async-storage/async-storage"));
 var StorageTools = /** @class */ (function () {
     function StorageTools() {
@@ -105,19 +97,31 @@ var StorageTools = /** @class */ (function () {
      * @param key 存入的Storage名称
      * @param value 存入的数据
      */
-    // static async moregeStorage(key: string, value: any) {
-    //   try {
-    //     await AsyncStorage.mergeItem(key, JSON.stringify(value));
-    //   } catch (e) {
-    //     throw e;
-    //   }
-    // }
+    StorageTools.moregeStorage = function (key, value) {
+        return __awaiter(this, void 0, void 0, function () {
+            var e_3;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, async_storage_1.default.mergeItem(key, JSON.stringify(value))];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        e_3 = _a.sent();
+                        throw e_3;
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
     /**
      * 清除全部缓存
      */
     StorageTools.clearAllStorage = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var e_3;
+            var e_4;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -127,8 +131,8 @@ var StorageTools = /** @class */ (function () {
                         _a.sent();
                         return [3 /*break*/, 3];
                     case 2:
-                        e_3 = _a.sent();
-                        throw e_3;
+                        e_4 = _a.sent();
+                        throw e_4;
                     case 3: return [2 /*return*/];
                 }
             });

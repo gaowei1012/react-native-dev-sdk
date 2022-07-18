@@ -16,6 +16,7 @@ declare class StorageTools {
      * @param key 存入的Storage名称
      * @param value 存入的数据
      */
+    static moregeStorage(key: string, value: any): Promise<void>;
     /**
      * 清除全部缓存
      */

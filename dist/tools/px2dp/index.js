@@ -1,12 +1,4 @@
 "use strict";
-/*
- * @Author: mingwei
- * @Date: 2022-04-16 16:33:42
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-16 16:33:42
- * @FilePath: /react-native-dev-sdk/tools/px2dp/index.ts
- * @Description:
- */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
