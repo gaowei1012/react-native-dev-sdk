@@ -1,12 +1,3 @@
-<!--
- * @Author: mingwei
- * @Date: 2022-04-04 23:31:26
- * @LastEditors: mingwei
- * @LastEditTime: 2022-06-30 15:42:57
- * @FilePath: /react-native-dev-sdk/README.md
- * @Description:
--->
-
 # react-native-dev-sdk
 
 react-native-dev-sdk
@@ -79,83 +70,22 @@ options = {
 };
 ```
 
-> DynamicTabNavigate.tsx 底部导航
+> axios封装
 
-```tsx
-import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigatorUtils } from 'react-native-sdk';
-import * as React from 'react';
+```ts
+import { get } from 'react-native-sdk-dev';
 
-import { RootNavigatorBottom } from './RootNavigatorBottom';
-import { Login, Register } from '@/pages/user';
-import NotesPage from '@/pages/notes';
-
-const Stack = createNativeStackNavigator();
-
-export default function DynamicTabNavigator() {
-  return (
-    <SafeAreaProvider>
-      <NavigationContainer ref={navigatorRef => NavigatorUtils.initNavihator(navigatorRef)}>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-           <!-- 这里要配置基本路由 -->
-          <Stack.Screen name="root" component={RootNavigatorBottom} />
-          <Stack.Screen name="notes" component={NotesPage} />
-          <Stack.Screen name="login" component={Login} />
-          <Stack.Screen name="register" component={Register} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaProvider>
-  );
+// 发送get请求
+const request = async = () => {
+  const response = await get('url')
+  console.log('response', response)
 }
+
+
+// 发送post请求
+const requestRes = async = () => {
+  const response = await post('url', data)
+  console.log('response', response)
+}
+
 ```
-
-> RootNavigatorBottom.tsx
-
-```tsx
-import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomeScreen, ProfileScreen } from './screen';
-import { TabBarItem } from 'react-native-sdk';
-
-const Tab = createBottomTabNavigator();
-
-const RootNavigatorBottom: React.FC<{}> = () => {
-  return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused }) => {
-          if (route.name === 'home') {
-            return (
-              <TabBarItem
-                focused={focused}
-                normalIcon={require('../assets/tab/home.png')}
-                selectIcon={require('../assets/tab/ac_home.png')}
-              />
-            );
-          } else if (route.name === 'profile') {
-            return (
-              <TabBarItem
-                focused={focused}
-                normalIcon={require('../assets/tab/dynamic.png')}
-                selectIcon={require('../assets/tab/ac_dynamic.png')}
-              />
-            );
-          }
-        },
-        tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'gray',
-        headerShown: false,
-      })}>
-      <Tab.Screen name="home" component={HomeScreen} options={{ tabBarLabel: 'notes' }} />
-      <Tab.Screen name="profile" component={ProfileScreen} options={{ tabBarLabel: 'profile' }} />
-    </Tab.Navigator>
-  );
-};
-
-export { RootNavigatorBottom };
-```
-
-更新中
