@@ -1,1 +1,2 @@
-export * from './request';
+export * from './axios';
+export * from './http';
