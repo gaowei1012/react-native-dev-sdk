@@ -4,13 +4,17 @@ react-native-dev-sdk
 
 > 封装大部业务中常用组件，方法、方便项目中适用
 
-安装依赖使用，安装需要将 dev 嵌入项目
+安装依赖使用，安装需要将 dev 嵌入项目.
 
 ```
-  npm i @react-native-async-storage/async-storage @react-navigation/native axios react-native-root-toast @react-navigation/native-stack @react-navigation/bottom-tabs react-native-gesture-handler react-native-safe-area-context react-native-screens validator react-native-svg --save
+  npm i @react-native-async-storage/async-storage @react-navigation/native axios react-native-root-toast @react-navigation/native-stack @react-navigation/bottom-tabs react-native-gesture-handler react-native-safe-area-context react-native-screens validator react-native-svg axios --save
 ```
 
 在项目 ios 目录下，执行 pod isntall
+
+```tsx
+cd ios && pod install
+```
 
 > 使用
 
@@ -76,16 +80,23 @@ options = {
 import { get } from 'react-native-sdk-dev';
 
 // 发送get请求
-const request = async = () => {
-  const response = await get('url')
-  console.log('response', response)
+const request = async = (url) => {
+  await get(url)
 }
 
-
 // 发送post请求
-const requestRes = async = () => {
-  const response = await post('url', data)
-  console.log('response', response)
+const postRes = async = (url, data) => {
+  await post(url, data)
+}
+
+// 编辑资料
+const putRes = async (url, data) => {
+  await post(url, data)
+}
+
+// 删除资料
+const delRes = async (url) => {
+  await del(url)
 }
 
 ```
