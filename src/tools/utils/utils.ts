@@ -64,6 +64,11 @@ class Utils {
   static platform() {
     return Platform.OS === 'ios' ? true : false;
   }
+
+  // 判断数据结构类型
+  static type(option: number | string | Array<any> | Object) {
+    return Object.prototype.toString.call(option);
+  }
 }
 
 export { Utils };
