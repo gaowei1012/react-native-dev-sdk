@@ -4,14 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Utils = void 0;
-/*
- * @Author: mingwei
- * @Date: 2022-04-20 09:46:43
- * @LastEditors: mingwei
- * @LastEditTime: 2022-05-05 09:45:30
- * @FilePath: /react-native-dev-sdk/src/tools/utils/utils.ts
- * @Description:
- */
 var moment_1 = __importDefault(require("moment"));
 var lodash_1 = __importDefault(require("lodash"));
 var cnchar_1 = __importDefault(require("cnchar"));
@@ -71,6 +63,10 @@ var Utils = /** @class */ (function () {
     // 判断机型平台
     Utils.platform = function () {
         return react_native_1.Platform.OS === 'ios' ? true : false;
+    };
+    // 判断数据结构类型
+    Utils.type = function (option) {
+        return Object.prototype.toString.call(option);
     };
     return Utils;
 }());

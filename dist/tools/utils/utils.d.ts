@@ -20,5 +20,6 @@ declare class Utils {
         _targetData: any;
     };
     static platform(): boolean;
+    static type(option: number | string | Array<any> | Object): any;
 }
 export { Utils };

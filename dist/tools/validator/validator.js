@@ -1,12 +1,4 @@
 "use strict";
-/*
- * @Author: mingwei
- * @Date: 2022-04-26 17:04:00
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-26 17:12:19
- * @FilePath: /react-native-dev-sdk/src/tools/validator/validator.ts
- * @Description:
- */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };

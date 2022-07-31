@@ -1,12 +1,3 @@
-/*
- * @Author: mingwei
- * @Date: 2022-04-26 17:04:00
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-26 17:12:19
- * @FilePath: /react-native-dev-sdk/src/tools/validator/validator.ts
- * @Description:
- */
-
 import validator from 'validator';
 
 class ValidatorUtils {

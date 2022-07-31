@@ -1,11 +1,3 @@
-/*
- * @Author: mingwei
- * @Date: 2022-04-20 09:46:43
- * @LastEditors: mingwei
- * @LastEditTime: 2022-05-05 09:45:30
- * @FilePath: /react-native-dev-sdk/src/tools/utils/utils.ts
- * @Description:
- */
 import moment from 'moment';
 import _ from 'lodash';
 import cnchar from 'cnchar';
@@ -63,6 +55,11 @@ class Utils {
   // 判断机型平台
   static platform() {
     return Platform.OS === 'ios' ? true : false;
+  }
+
+  // 判断数据结构类型
+  static type(option: number | string | Array<any> | Object) {
+    return Object.prototype.toString.call(option);
   }
 }
 

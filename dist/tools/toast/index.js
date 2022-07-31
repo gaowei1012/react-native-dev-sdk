@@ -1,12 +1,4 @@
 "use strict";
-/*
- * @Author: mingwei
- * @Date: 2022-04-16 15:27:49
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-16 15:27:50
- * @FilePath: /react-native-dev-sdk/tools/Toast/index.ts
- * @Description:
- */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
