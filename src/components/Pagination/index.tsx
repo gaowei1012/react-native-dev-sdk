@@ -8,13 +8,7 @@ import {
 } from 'react-native';
 import { px2dp, Utils } from '../../tools';
 
-interface PaginationProps extends RefreshControlProps {
-  children: React.ReactElement;
-  loadFunctionMore: any;
-  requestFunctionData: any;
-}
-
-const Pagination: React.FC<PaginationProps> = ({
+const Pagination: React.FC<IPagination.IPaginationProps & RefreshControlProps> = ({
   loadFunctionMore,
   requestFunctionData,
   tintColor,
