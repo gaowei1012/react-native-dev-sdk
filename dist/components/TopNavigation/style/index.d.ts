@@ -1,12 +1,10 @@
-export declare const status_bar_h = 20;
-export declare const nav_bar_h: number;
 declare const styles: {
     navBar: {
         flexDirection: "row";
         alignItems: "center";
         justifyContent: "space-around";
         height: number;
-        paddingHorizontal: number;
+        width: number;
     };
     navBarTitleContainer: {
         flexDirection: "row";
@@ -21,20 +19,23 @@ declare const styles: {
         fontWeight: "bold";
         textAlign: "center";
     };
+    leftIcon: {
+        width: number;
+        height: number;
+    };
     statusBar: {};
     leftBtnBox: {
         flexDirection: "row";
         alignItems: "center";
         justifyContent: "flex-start";
         width: number;
-        height: number;
+        paddingLeft: number;
     };
     rightBtnBox: {
         flexDirection: "row";
         alignItems: "center";
         justifyContent: "flex-end";
         width: number;
-        height: number;
     };
 };
 export { styles };

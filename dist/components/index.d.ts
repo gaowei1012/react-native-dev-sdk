@@ -4,7 +4,7 @@ export { default as Card } from './Card/index';
 export { default as Toast } from './Toast/index';
 export { default as IndexingView } from './Indexing/index';
 export { default as Loading } from './Loading/index';
-export { default as TopNavigationBar } from './TopNavigationBar/index';
+export { default as TopNavigation } from './TopNavigation/index';
 export { default as TabBarItem } from './TabBarItem';
 export { default as Button } from './Button';
 export { default as Dialog } from './Dialog';

@@ -1,27 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.styles = exports.nav_bar_h = exports.status_bar_h = void 0;
-/*
- * @Author: mingwei
- * @Date: 2022-04-29 17:15:38
- * @LastEditors: mingwei
- * @LastEditTime: 2022-05-04 17:26:10
- * @FilePath: /react-native-dev-sdk/src/components/topNavigationBar/style/index.ts
- * @Description:
- */
+exports.styles = void 0;
 var react_native_1 = require("react-native");
 var tools_1 = require("../../../tools");
-var NAV_BAR_H_IOS = 44;
+var NAV_BAR_H_IOS = 40;
 var NAV_BAR_H_ANDROID = 50;
-exports.status_bar_h = react_native_1.Platform.OS === 'ios' ? 20 : null;
-exports.nav_bar_h = react_native_1.Platform.OS === 'ios' ? NAV_BAR_H_IOS : NAV_BAR_H_ANDROID;
+// const status_bar_h = Platform.OS === 'ios' ? 20 : null;
+var nav_bar_h = react_native_1.Platform.OS === 'ios' ? NAV_BAR_H_IOS : NAV_BAR_H_ANDROID;
 var styles = react_native_1.StyleSheet.create({
     navBar: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',
-        height: exports.nav_bar_h,
-        paddingHorizontal: (0, tools_1.px2dp)(15),
+        height: nav_bar_h,
+        // paddingHorizontal: px2dp(15),
+        width: tools_1.width,
     },
     navBarTitleContainer: {
         flexDirection: 'row',
@@ -29,14 +22,21 @@ var styles = react_native_1.StyleSheet.create({
     },
     navBarButton: {
         alignItems: 'center',
+        // justifyContent: 'center',
+        // width: px2dp(30),
+        // height: px2dp(40),
     },
     container: {
-    // backgroundColor: '#fff', // 设置背景颜色
+    // backgroundColor: '#85DFD2', // 设置背景颜色
     },
     title: {
         width: (0, tools_1.px2dp)(200),
         fontWeight: 'bold',
         textAlign: 'center',
+    },
+    leftIcon: {
+        width: (0, tools_1.px2dp)(22),
+        height: (0, tools_1.px2dp)(22),
     },
     statusBar: {
     // height: status_bar_h ? status_bar_h : '',
@@ -46,14 +46,14 @@ var styles = react_native_1.StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
         width: (0, tools_1.px2dp)(50),
-        height: exports.nav_bar_h, // 根据平台设置高度
+        paddingLeft: (0, tools_1.px2dp)(6),
+        // height: NAV_BAR_H, // 根据平台设置高度
     },
     rightBtnBox: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        width: (0, tools_1.px2dp)(60),
-        height: exports.nav_bar_h, // 根据平台设置高度
+        width: (0, tools_1.px2dp)(50),
     },
 });
 exports.styles = styles;
