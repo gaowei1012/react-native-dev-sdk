@@ -1,5 +1,5 @@
 import React from 'react';
-export declare type ITabBarItemType = {
+export type ITabBarItemType = {
     tintColor?: string;
     selectIcon?: string;
     normalIcon?: string;

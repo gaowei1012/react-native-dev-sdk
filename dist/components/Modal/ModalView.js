@@ -15,6 +15,6 @@ var jsx_runtime_1 = require("react/jsx-runtime");
 var react_native_1 = require("react-native");
 var ModalViews = function (props) {
     var propStyle = props.propStyle;
-    return ((0, jsx_runtime_1.jsx)(react_native_1.Animated.View, __assign({ style: [propStyle] }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Animated.Text, { children: "hello" }, void 0) }), void 0));
+    return ((0, jsx_runtime_1.jsx)(react_native_1.Animated.View, __assign({ style: [propStyle] }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Animated.Text, { children: "hello" }) })));
 };
 exports.default = ModalViews;

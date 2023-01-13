@@ -66,7 +66,7 @@ var ValidatorUtils = /** @class */ (function () {
          */
         this.isEmpty = function (field, str) {
             if (validator_1.default.isEmpty(str))
-                throw "[" + field + "]\u4E0D\u80FD\u4E3A\u7A7A";
+                throw "[".concat(field, "]\u4E0D\u80FD\u4E3A\u7A7A");
             return _this;
         };
     }

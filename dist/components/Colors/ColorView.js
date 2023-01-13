@@ -53,8 +53,8 @@ var ColorView = function () {
     }).panHandlers, { style: {
             position: 'absolute',
             backgroundColor: '#fff',
-        } }), void 0)); };
+        } }))); };
     var onLayout = function (nativeEvent) { };
-    return ((0, jsx_runtime_1.jsx)(react_native_1.View, __assign({ ref: viewRef, onLayout: function (nativeEvent) { return onLayout(nativeEvent); } }, { children: (0, jsx_runtime_1.jsx)(react_native_1.View, { children: renderColorView() }, void 0) }), void 0));
+    return ((0, jsx_runtime_1.jsx)(react_native_1.View, __assign({ ref: viewRef, onLayout: function (nativeEvent) { return onLayout(nativeEvent); } }, { children: (0, jsx_runtime_1.jsx)(react_native_1.View, { children: renderColorView() }) })));
 };
 exports.default = ColorView;

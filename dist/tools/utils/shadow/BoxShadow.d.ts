@@ -1,5 +1,5 @@
 import { Component } from 'react';
-export declare type BoxSettingShadowType = {
+export type BoxSettingShadowType = {
     width: number;
     height: number;
     color: string;

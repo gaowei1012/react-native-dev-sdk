@@ -20,6 +20,6 @@ var react_native_1 = require("react-native");
 var style_1 = __importDefault(require("./style"));
 var Loading = function (props) {
     var size = props.size, loadingDisplay = props.loadingDisplay;
-    return ((0, jsx_runtime_1.jsx)(react_native_1.View, __assign({ style: [style_1.default.loding_mask, { display: loadingDisplay }] }, { children: (0, jsx_runtime_1.jsx)(react_native_1.ActivityIndicator, { size: size, color: "#fff" }, void 0) }), void 0));
+    return ((0, jsx_runtime_1.jsx)(react_native_1.View, __assign({ style: [style_1.default.loding_mask, { display: loadingDisplay }] }, { children: (0, jsx_runtime_1.jsx)(react_native_1.ActivityIndicator, { size: size, color: "#fff" }) })));
 };
 exports.Loading = Loading;

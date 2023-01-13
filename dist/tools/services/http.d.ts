@@ -1,4 +1,4 @@
-export declare type responseBody<T = any> = {
+export type responseBody<T = any> = {
     success: boolean;
     statusCode: number;
     message: string;

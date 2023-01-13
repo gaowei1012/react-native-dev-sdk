@@ -37,7 +37,7 @@ var Pagination = function (_a) {
                 position: 'absolute',
                 bottom: (0, tools_1.px2dp)(-50),
                 width: '100%',
-            } }, { children: (0, jsx_runtime_1.jsx)(react_native_1.ActivityIndicator, { animating: true, size: "large" }, void 0) }), void 0)) : ((0, jsx_runtime_1.jsx)(react_native_1.ActivityIndicator, { animating: true, size: "large" }, void 0)) }, void 0)); };
+            } }, { children: (0, jsx_runtime_1.jsx)(react_native_1.ActivityIndicator, { animating: true, size: "large" }) }))) : ((0, jsx_runtime_1.jsx)(react_native_1.ActivityIndicator, { animating: true, size: "large" })) })); };
     var onRefresh = function () {
         setRefreshing(true);
         setTimeout(function () {
@@ -45,6 +45,6 @@ var Pagination = function (_a) {
             setRefreshing(true);
         }, 1000);
     };
-    return ((0, jsx_runtime_1.jsx)(react_native_1.ScrollView, __assign({ style: { flex: 1 }, onScrollEndDrag: onMomentumScrollEnd, refreshControl: (0, jsx_runtime_1.jsx)(react_native_1.RefreshControl, { onRefresh: onRefresh, refreshing: refreshing, progressBackgroundColor: progressBackgroundColor, colors: colors, tintColor: tintColor, titleColor: titleColor, title: title }, void 0) }, { children: refreshBottom ? renderRactivityIndicator() : (0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, {}, void 0) }), void 0));
+    return ((0, jsx_runtime_1.jsx)(react_native_1.ScrollView, __assign({ style: { flex: 1 }, onScrollEndDrag: onMomentumScrollEnd, refreshControl: (0, jsx_runtime_1.jsx)(react_native_1.RefreshControl, { onRefresh: onRefresh, refreshing: refreshing, progressBackgroundColor: progressBackgroundColor, colors: colors, tintColor: tintColor, titleColor: titleColor, title: title }) }, { children: refreshBottom ? renderRactivityIndicator() : (0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, {}) })));
 };
 exports.default = Pagination;

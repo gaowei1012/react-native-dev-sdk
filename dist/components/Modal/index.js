@@ -18,6 +18,6 @@ var jsx_runtime_1 = require("react/jsx-runtime");
 var react_native_1 = require("react-native");
 var ModalView_1 = __importDefault(require("./ModalView"));
 var DevSdkModal = function (props) {
-    return ((0, jsx_runtime_1.jsx)(react_native_1.Modal, __assign({}, props, { children: (0, jsx_runtime_1.jsx)(ModalView_1.default, { propStyle: [props.modelStyle] }, void 0) }), void 0));
+    return ((0, jsx_runtime_1.jsx)(react_native_1.Modal, __assign({}, props, { children: (0, jsx_runtime_1.jsx)(ModalView_1.default, { propStyle: [props.modelStyle] }) })));
 };
 exports.default = DevSdkModal;

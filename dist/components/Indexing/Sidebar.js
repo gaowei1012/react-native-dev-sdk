@@ -107,9 +107,9 @@ var SideBar = function (_a) {
                             fontSize: 14,
                             color: '#666',
                             fontWeight: 'bold',
-                        } }, { children: item.substr(0, 1) }), void 0) }), index === null || index === void 0 ? void 0 : index.toString()));
-            }) }, void 0));
+                        } }, { children: item.substr(0, 1) })) }), index === null || index === void 0 ? void 0 : index.toString()));
+            }) }));
     };
-    return (0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: renderSideEle() }, void 0);
+    return (0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: renderSideEle() });
 };
 exports.SideBar = SideBar;

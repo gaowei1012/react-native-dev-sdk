@@ -1,5 +1,5 @@
 import React from 'react';
-declare type buttonType = {
+type buttonType = {
     text: string | React.ReactElement;
     onPress?: () => void;
     buttonPropsStyle?: any;

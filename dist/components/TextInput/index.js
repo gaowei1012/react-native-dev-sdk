@@ -14,6 +14,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var jsx_runtime_1 = require("react/jsx-runtime");
 var react_native_1 = require("react-native");
 var DevSdkTextInput = function (props) {
-    return (0, jsx_runtime_1.jsx)(react_native_1.TextInput, __assign({}, props), void 0);
+    return (0, jsx_runtime_1.jsx)(react_native_1.TextInput, __assign({}, props));
 };
 exports.default = DevSdkTextInput;

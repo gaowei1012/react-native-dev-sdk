@@ -1,5 +1,5 @@
 import React from 'react';
-declare type tabBarItemType = {
+type tabBarItemType = {
     tintColor?: string;
     selectIcon?: string;
     normalIcon?: string;

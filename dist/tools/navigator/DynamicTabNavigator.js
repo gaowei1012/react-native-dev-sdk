@@ -32,12 +32,12 @@ var DynamicTabNavigator = function (props) {
                         tabBarIcon: function (_a) {
                             var focused = _a.focused;
                             if (route.name == r['route']) {
-                                return ((0, jsx_runtime_1.jsx)(TabBarItem_1.TabBarItem, { focused: focused, normalIcon: r.normalIcon, selectIcon: r.selectIcon }, void 0));
+                                return ((0, jsx_runtime_1.jsx)(TabBarItem_1.TabBarItem, { focused: focused, normalIcon: r.normalIcon, selectIcon: r.selectIcon }));
                             }
                         },
                     });
-                } }, { children: (0, jsx_runtime_1.jsx)(Tab.Screen, { name: r.route, component: r.components, options: { tabBarLabel: r.title } }, void 0) }), void 0)); }) }, void 0));
+                } }, { children: (0, jsx_runtime_1.jsx)(Tab.Screen, { name: r.route, component: r.components, options: { tabBarLabel: r.title } }) }))); }) }));
     };
-    return ((0, jsx_runtime_1.jsx)(react_native_safe_area_context_1.SafeAreaProvider, { children: (0, jsx_runtime_1.jsx)(native_1.NavigationContainer, __assign({ ref: function (navigatorRef) { return initNavihator(navigatorRef); } }, { children: (0, jsx_runtime_1.jsxs)(Stack.Navigator, __assign({ screenOptions: { headerShown: false } }, { children: [(0, jsx_runtime_1.jsx)(Stack.Screen, { name: "root", component: RootNavigatorBottom }, void 0), children] }), void 0) }), void 0) }, void 0));
+    return ((0, jsx_runtime_1.jsx)(react_native_safe_area_context_1.SafeAreaProvider, { children: (0, jsx_runtime_1.jsx)(native_1.NavigationContainer, __assign({ ref: function (navigatorRef) { return initNavihator(navigatorRef); } }, { children: (0, jsx_runtime_1.jsxs)(Stack.Navigator, __assign({ screenOptions: { headerShown: false } }, { children: [(0, jsx_runtime_1.jsx)(Stack.Screen, { name: "root", component: RootNavigatorBottom }), children] })) })) }));
 };
 exports.DynamicTabNavigator = DynamicTabNavigator;

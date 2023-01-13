@@ -1,5 +1,5 @@
 import { StyleProp, ViewStyle, TextStyle } from 'react-native';
-declare type ShowToastType = {
+type ShowToastType = {
     msg: string;
     duration?: number | 3000;
     position?: string | 'centner' | 'bottom' | 'top';

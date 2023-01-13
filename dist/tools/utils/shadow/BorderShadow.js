@@ -27,7 +27,11 @@ var __assign = (this && this.__assign) || function () {
 };
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -84,16 +88,16 @@ var BorderShadow = /** @class */ (function (_super) {
                     switch (side) {
                         case 'top':
                             return __spreadArray([
-                                (0, jsx_runtime_1.jsxs)(react_native_svg_1.default, __assign({ height: lineWidth, width: width + lineWidth, style: { position: 'absolute', top: inset ? 0 : -lineWidth } }, { children: [(0, jsx_runtime_1.jsxs)(react_native_svg_1.Defs, { children: [(0, jsx_runtime_1.jsx)(react_native_svg_1.LinearGradient, __assign({ id: "top", x1: "0%", x2: "0%", y1: "100%", y2: "0%" }, { children: linear('BorderTop') }), void 0), (0, jsx_runtime_1.jsx)(react_native_svg_1.LinearGradient, __assign({ id: "top-inset", x1: "0%", x2: "0%", y1: "0%", y2: "100%" }, { children: linear('BorderTopInset') }), void 0)] }, void 0), (0, jsx_runtime_1.jsx)(react_native_svg_1.Rect, { x: 0, y: 0, width: width, height: lineWidth, fill: "url(#top" + (inset ? '-inset' : '') + ")" }, void 0)] }), void 0)
+                                (0, jsx_runtime_1.jsxs)(react_native_svg_1.default, __assign({ height: lineWidth, width: width + lineWidth, style: { position: 'absolute', top: inset ? 0 : -lineWidth } }, { children: [(0, jsx_runtime_1.jsxs)(react_native_svg_1.Defs, { children: [(0, jsx_runtime_1.jsx)(react_native_svg_1.LinearGradient, __assign({ id: "top", x1: "0%", x2: "0%", y1: "100%", y2: "0%" }, { children: linear('BorderTop') })), (0, jsx_runtime_1.jsx)(react_native_svg_1.LinearGradient, __assign({ id: "top-inset", x1: "0%", x2: "0%", y1: "0%", y2: "100%" }, { children: linear('BorderTopInset') }))] }), (0, jsx_runtime_1.jsx)(react_native_svg_1.Rect, { x: 0, y: 0, width: width, height: lineWidth, fill: "url(#top".concat(inset ? '-inset' : '', ")") })] }))
                             ], children, true);
                         case 'bottom':
                             return __spreadArray(__spreadArray([], children, true), [
-                                (0, jsx_runtime_1.jsxs)(react_native_svg_1.default, __assign({ height: lineWidth, width: width + lineWidth, style: { position: 'absolute', bottom: inset ? -lineWidth : 0 } }, { children: [(0, jsx_runtime_1.jsxs)(react_native_svg_1.Defs, { children: [(0, jsx_runtime_1.jsx)(react_native_svg_1.LinearGradient, __assign({ id: "bottom", x1: "0%", x2: "0%", y1: "0%", y2: "100%" }, { children: linear('BorderBottom') }), void 0), (0, jsx_runtime_1.jsx)(react_native_svg_1.LinearGradient, __assign({ id: "bottom-inset", x1: "0%", x2: "0%", y1: "100%", y2: "0%" }, { children: linear('BorderBottomInset') }), void 0)] }, void 0), (0, jsx_runtime_1.jsx)(react_native_svg_1.Rect, { x: 0, y: 0, width: width, height: lineWidth, fill: "url(#bottom" + (inset ? '-inset' : '') + ")" }, void 0)] }), void 0),
+                                (0, jsx_runtime_1.jsxs)(react_native_svg_1.default, __assign({ height: lineWidth, width: width + lineWidth, style: { position: 'absolute', bottom: inset ? -lineWidth : 0 } }, { children: [(0, jsx_runtime_1.jsxs)(react_native_svg_1.Defs, { children: [(0, jsx_runtime_1.jsx)(react_native_svg_1.LinearGradient, __assign({ id: "bottom", x1: "0%", x2: "0%", y1: "0%", y2: "100%" }, { children: linear('BorderBottom') })), (0, jsx_runtime_1.jsx)(react_native_svg_1.LinearGradient, __assign({ id: "bottom-inset", x1: "0%", x2: "0%", y1: "100%", y2: "0%" }, { children: linear('BorderBottomInset') }))] }), (0, jsx_runtime_1.jsx)(react_native_svg_1.Rect, { x: 0, y: 0, width: width, height: lineWidth, fill: "url(#bottom".concat(inset ? '-inset' : '', ")") })] })),
                             ], false);
                         default:
                             throw new Error("Wrong Type of Side! We just support 'top' and 'bottom'");
                     }
-                })() }), void 0));
+                })() })));
         };
         return _this;
     }

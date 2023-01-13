@@ -1,5 +1,5 @@
 import { Component } from 'react';
-export declare type BorderSettingShadowType = {
+export type BorderSettingShadowType = {
     side: string | 'bottom';
     width: number;
     color: string;

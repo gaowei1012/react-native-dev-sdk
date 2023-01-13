@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import 'react-native-gesture-handler';
-declare type TabsType = {
+type TabsType = {
     title: string;
     route: string;
     normalIcon: any;
