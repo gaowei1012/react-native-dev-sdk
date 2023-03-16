@@ -1,11 +1,3 @@
-/*
- * @Author: mingwei
- * @Date: 2022-04-29 13:16:42
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-29 14:17:19
- * @FilePath: /react-native-dev-sdk/src/components/Colors/ColorView.tsx
- * @Description:
- */
 import React, { useRef } from 'react';
 import { View, PanResponder, Image } from 'react-native';
 

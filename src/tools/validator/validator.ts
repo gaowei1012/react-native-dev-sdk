@@ -26,8 +26,7 @@ class ValidatorUtils {
    * @returns
    */
   isIdentityCard = (str: string) => {
-    if (!validator.isIdentityCard(str, 'any') || str.length != 18)
-      throw '身份证格式错误,不支持非大陆身份证';
+    if (!validator.isIdentityCard(str, 'any') || str.length != 18) throw '身份证格式错误,不支持非大陆身份证';
     return this;
   };
   /**

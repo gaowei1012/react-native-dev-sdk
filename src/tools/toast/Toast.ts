@@ -1,12 +1,3 @@
-/*
- * @Author: mingwei
- * @Date: 2022-04-16 14:52:19
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-16 15:27:08
- * @FilePath: /react-native-dev-sdk/tools/toast.ts
- * @Description: Toast 轻提示
- */
-
 import { StyleProp, ViewStyle, TextStyle } from 'react-native';
 import Toast from 'react-native-root-toast';
 
@@ -35,19 +26,7 @@ class RootToast {
    * @param duration 页面存留时间，默认为3秒
    */
   static showToast(options: ShowToastType) {
-    const {
-      position,
-      msg,
-      duration,
-      animation,
-      shadow,
-      backgroundColor,
-      containerStyle,
-      onHidden,
-      onPress,
-      onShow,
-      delay,
-    } = options;
+    const { position, msg, duration, animation, shadow, backgroundColor, containerStyle, onHidden, onPress, onShow, delay } = options;
     // 默认0为居中模式
     let _position: number = 0;
     switch (position) {

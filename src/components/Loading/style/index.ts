@@ -1,11 +1,3 @@
-/*
- * @Author: mingwei
- * @Date: 2022-04-24 22:39:27
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-24 22:41:00
- * @FilePath: /react-native-dev-sdk/src/components/Loading/style/index.ts
- * @Description:
- */
 import { StyleSheet } from 'react-native';
 import { px2dp } from '../../../tools';
 

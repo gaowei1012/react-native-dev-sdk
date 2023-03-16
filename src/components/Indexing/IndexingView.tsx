@@ -1,12 +1,3 @@
-/*
- * @Author: mingwei
- * @Date: 2022-04-21 16:42:37
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-24 10:47:17
- * @FilePath: /react-native-dev-sdk/src/components/Indexing/IndexingView.tsx
- * @Description:
- */
-
 import React, { useState, useRef, useEffect } from 'react';
 import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 import { IndexingViewStyle } from './style';
@@ -53,10 +44,7 @@ const IndexingView: React.FC<{ onCancel: any; onSave: any; treeData: any[] }> = 
     return (
       <>
         {node.map((n: any) => (
-          <TouchableOpacity
-            activeOpacity={1}
-            onPress={() => chooseNode(n)}
-            style={IndexingViewStyle.itemContent}>
+          <TouchableOpacity activeOpacity={1} onPress={() => chooseNode(n)} style={IndexingViewStyle.itemContent}>
             <Text style={{ height: 30 }}>{n.title}</Text>
           </TouchableOpacity>
         ))}
@@ -124,13 +112,7 @@ const IndexingView: React.FC<{ onCancel: any; onSave: any; treeData: any[] }> = 
             <Text style={IndexingViewStyle.titleText}>请选择社区</Text>
           </View>
           <TouchableOpacity disabled={!disabled} onPress={() => onSave(treeSele)} activeOpacity={1}>
-            <Text
-              style={[
-                IndexingViewStyle.affirmText,
-                disabled ? IndexingViewStyle.affirmTextAction : null,
-              ]}>
-              确认
-            </Text>
+            <Text style={[IndexingViewStyle.affirmText, disabled ? IndexingViewStyle.affirmTextAction : null]}>确认</Text>
           </TouchableOpacity>
         </View>
         <View style={IndexingViewStyle.treeContentWrap}>
@@ -140,22 +122,12 @@ const IndexingView: React.FC<{ onCancel: any; onSave: any; treeData: any[] }> = 
                 <>
                   {treeSele.map((el, index) => (
                     <TouchableOpacity
-                      disabled={
-                        treeSele.length != 1 ? (treeSele.length == index + 1 ? true : false) : false
-                      }
+                      disabled={treeSele.length != 1 ? (treeSele.length == index + 1 ? true : false) : false}
                       activeOpacity={0.5}
                       onPress={() => selectTree(el, index)}
                       style={IndexingViewStyle.selectNodeTitle}
                       key={el.org_id}>
-                      <Text
-                        style={[
-                          IndexingViewStyle.treeContentTopText,
-                          treeData.length != 1
-                            ? treeSele.length == index + 1
-                              ? IndexingViewStyle.treeContentTopTextAction
-                              : null
-                            : null,
-                        ]}>
+                      <Text style={[IndexingViewStyle.treeContentTopText, treeData.length != 1 ? (treeSele.length == index + 1 ? IndexingViewStyle.treeContentTopTextAction : null) : null]}>
                         {el.title}
                       </Text>
                     </TouchableOpacity>
@@ -180,10 +152,7 @@ const IndexingView: React.FC<{ onCancel: any; onSave: any; treeData: any[] }> = 
             />
           </View>
           <View style={IndexingViewStyle.sideBoxWrap}>
-            <SideBar
-              onSelectPress={(item: any) => onSelectPress(item)}
-              sideData={targetHeaderData}
-            />
+            <SideBar onSelectPress={(item: any) => onSelectPress(item)} sideData={targetHeaderData} />
           </View>
         </View>
       </View>

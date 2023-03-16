@@ -1,11 +1,3 @@
-/*
- * @Author: mingwei
- * @Date: 2022-06-28 09:13:29
- * @LastEditors: mingwei
- * @LastEditTime: 2022-06-28 09:13:31
- * @FilePath: /react-native-dev-sdk/src/components/Dialog/style/index.ts
- * @Description:
- */
 import { px2dp, width, height } from '../../../tools';
 import { StyleSheet } from 'react-native';
 
