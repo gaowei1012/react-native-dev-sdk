@@ -1,11 +1,3 @@
-/*
- * @Author: mingwei
- * @Date: 2022-05-04 17:35:57
- * @LastEditors: mingwei
- * @LastEditTime: 2022-05-04 17:35:58
- * @FilePath: /react-native-dev-sdk/src/components/Button/style/index.ts
- * @Description:
- */
 import { StyleSheet } from 'react-native';
 import { px2dp } from '../../../tools';
 

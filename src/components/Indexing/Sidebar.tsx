@@ -1,55 +1,20 @@
-/*
- * @Author: mingwei
- * @Date: 2022-04-21 16:37:00
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-24 09:34:15
- * @FilePath: /react-native-dev-sdk/src/components/Indexing/Sidebar.tsx
- * @Description:
- */
-/*
- * @Author: mingwei
- * @Date: 2022-04-20 12:59:50
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 15:48:12
- * @FilePath: /yl-app/frontend/src/iip/pages/user/ChooseCommunity/Sidebar.tsx
- * @Description:
- */
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  PanResponder,
-  GestureResponderEvent,
-  PanResponderGestureState,
-} from 'react-native';
+import { View, Text, PanResponder, GestureResponderEvent, PanResponderGestureState } from 'react-native';
 import { Utils } from '../../tools';
 import _ from 'lodash';
 
-const SideBar: React.FC<{ onSelectPress: any; sideData: any[] }> = ({
-  onSelectPress,
-  sideData,
-}) => {
+const SideBar: React.FC<{ onSelectPress: any; sideData: any[] }> = ({ onSelectPress, sideData }) => {
   const [moveDownY, setMoveDownY] = useState(0);
   const [moveDownKey, setMoveDownKey] = useState('');
   const [moveState, setMoveState] = useState(false);
 
-  const handlerSeekGrant = (
-    evt: GestureResponderEvent,
-    gestureState: PanResponderGestureState,
-    item: any,
-    index: React.Key | null | undefined
-  ) => {
+  const handlerSeekGrant = (evt: GestureResponderEvent, gestureState: PanResponderGestureState, item: any, index: React.Key | null | undefined) => {
     evt.persist(); // 需要加这个函数,来仿制进行复用函数
     setMoveDownY(evt.nativeEvent.pageY);
     setMoveDownKey(item);
   };
 
-  const handlerSeekMove = (
-    evt: GestureResponderEvent,
-    gestureState: PanResponderGestureState,
-    item: any,
-    index: React.Key | null | undefined
-  ) => {
+  const handlerSeekMove = (evt: GestureResponderEvent, gestureState: PanResponderGestureState, item: any, index: React.Key | null | undefined) => {
     evt.persist(); // 需要加这个函数,来仿制进行复用函数
     setMoveState(true);
     let moveY = evt.nativeEvent.pageY;
@@ -64,12 +29,7 @@ const SideBar: React.FC<{ onSelectPress: any; sideData: any[] }> = ({
     }
   };
 
-  const handlerSeekRelease = (
-    evt: GestureResponderEvent,
-    gestureState: PanResponderGestureState,
-    item: any,
-    index: React.Key | null | undefined
-  ) => {
+  const handlerSeekRelease = (evt: GestureResponderEvent, gestureState: PanResponderGestureState, item: any, index: React.Key | null | undefined) => {
     evt.persist();
     if (!moveState) {
       onSelectPress(item);

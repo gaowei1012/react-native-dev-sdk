@@ -1,19 +1,8 @@
-/*
- * @Author: mingwei
- * @Date: 2022-06-28 09:11:38
- * @LastEditors: mingwei
- * @LastEditTime: 2022-06-28 09:18:21
- * @FilePath: /react-native-dev-sdk/src/components/Dialog/index.tsx
- * @Description:
- */
-
 import React from 'react';
 import { Modal, ModalProps, View, TouchableOpacity, Text } from 'react-native';
 import { styles } from './style';
 
-const Dialog: React.FC<
-  { cancel: () => void; confirm: () => void; children?: React.ReactNode | undefined } & ModalProps
-> = props => {
+const Dialog: React.FC<{ cancel: () => void; confirm: () => void; children?: React.ReactNode | undefined } & ModalProps> = props => {
   const { visible, confirm, cancel, children } = props;
   const dialogBtnWrap = (text: string, bool: boolean) => (
     <TouchableOpacity

@@ -1,11 +1,3 @@
-/*
- * @Author: mingwei
- * @Date: 2022-05-04 17:35:25
- * @LastEditors: mingwei
- * @LastEditTime: 2022-05-16 22:54:15
- * @FilePath: /react-native-dev-sdk/src/components/Button/index.tsx
- * @Description:
- */
 import React from 'react';
 import { TouchableOpacity, TouchableNativeFeedback, View, Text } from 'react-native';
 import { buttonStyle } from './style';
@@ -26,10 +18,7 @@ const Button: React.FC<buttonType> = ({ text, onPress, buttonPropsStyle, type })
   const theme = type == 'default' ? buttonOptions[type] : '';
 
   const renderIosButton = () => (
-    <TouchableOpacity
-      style={[buttonStyle.wrap, buttonStyle[theme], buttonPropsStyle]}
-      onPress={onPress}
-      activeOpacity={0.8}>
+    <TouchableOpacity style={[buttonStyle.wrap, buttonStyle[theme], buttonPropsStyle]} onPress={onPress} activeOpacity={0.8}>
       <Text>{text}</Text>
     </TouchableOpacity>
   );

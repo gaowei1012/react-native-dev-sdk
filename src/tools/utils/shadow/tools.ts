@@ -1,12 +1,3 @@
-/*
- * @Author: mingwei
- * @Date: 2022-06-30 15:28:56
- * @LastEditors: mingwei
- * @LastEditTime: 2022-06-30 15:40:39
- * @FilePath: /react-native-dev-sdk/src/tools/utils/shadow/tools.ts
- * @Description:
- */
-
 export function colorRgb(color) {
   const reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
   let sColor = color.toLowerCase();
