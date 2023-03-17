@@ -12,14 +12,6 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var jsx_runtime_1 = require("react/jsx-runtime");
-/*
- * @Author: mingwei
- * @Date: 2022-04-29 13:16:42
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-29 14:17:19
- * @FilePath: /react-native-dev-sdk/src/components/Colors/ColorView.tsx
- * @Description:
- */
 var react_1 = require("react");
 var react_native_1 = require("react-native");
 var ColorView = function () {

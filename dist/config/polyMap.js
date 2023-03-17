@@ -1,14 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PolyMap = void 0;
-/*
- * @Author: mingwei
- * @Date: 2022-04-24 09:39:25
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-24 09:39:43
- * @FilePath: /react-native-dev-sdk/src/config/polyMap.ts
- * @Description: 全国省市区多音字
- */
 var PolyMap = {
     万: 'Wan',
     查: 'Cha',

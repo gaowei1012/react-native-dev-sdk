@@ -1,12 +1,4 @@
 "use strict";
-/*
- * @Author: mingwei
- * @Date: 2022-04-21 16:44:04
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-24 22:21:27
- * @FilePath: /react-native-dev-sdk/src/components/Indexing/style/index.ts
- * @Description:
- */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IndexingViewStyle = void 0;
 var tools_1 = require("../../../tools");

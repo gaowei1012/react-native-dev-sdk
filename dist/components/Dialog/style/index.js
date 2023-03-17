@@ -1,14 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.styles = void 0;
-/*
- * @Author: mingwei
- * @Date: 2022-06-28 09:13:29
- * @LastEditors: mingwei
- * @LastEditTime: 2022-06-28 09:13:31
- * @FilePath: /react-native-dev-sdk/src/components/Dialog/style/index.ts
- * @Description:
- */
 var tools_1 = require("../../../tools");
 var react_native_1 = require("react-native");
 var styles = react_native_1.StyleSheet.create({

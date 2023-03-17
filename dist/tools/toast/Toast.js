@@ -1,12 +1,4 @@
 "use strict";
-/*
- * @Author: mingwei
- * @Date: 2022-04-16 14:52:19
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-16 15:27:08
- * @FilePath: /react-native-dev-sdk/tools/toast.ts
- * @Description: Toast 轻提示
- */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
