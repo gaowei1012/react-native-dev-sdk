@@ -32,7 +32,7 @@ var DynamicTabNavigator = function (props) {
                         tabBarIcon: function (_a) {
                             var focused = _a.focused;
                             if (route.name == r['route']) {
-                                return ((0, jsx_runtime_1.jsx)(TabBarItem_1.TabBarItem, { focused: focused, normalIcon: r.normalIcon, selectIcon: r.selectIcon }));
+                                return (0, jsx_runtime_1.jsx)(TabBarItem_1.TabBarItem, { focused: focused, normalIcon: r.normalIcon, selectIcon: r.selectIcon });
                             }
                         },
                     });

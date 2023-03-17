@@ -16,22 +16,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SideBar = void 0;
 var jsx_runtime_1 = require("react/jsx-runtime");
-/*
- * @Author: mingwei
- * @Date: 2022-04-21 16:37:00
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-24 09:34:15
- * @FilePath: /react-native-dev-sdk/src/components/Indexing/Sidebar.tsx
- * @Description:
- */
-/*
- * @Author: mingwei
- * @Date: 2022-04-20 12:59:50
- * @LastEditors: mingwei
- * @LastEditTime: 2022-04-21 15:48:12
- * @FilePath: /yl-app/frontend/src/iip/pages/user/ChooseCommunity/Sidebar.tsx
- * @Description:
- */
 var react_1 = require("react");
 var react_native_1 = require("react-native");
 var tools_1 = require("../../tools");
