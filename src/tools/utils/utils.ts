@@ -61,6 +61,51 @@ class Utils {
   static type(option: number | string | Array<any> | Object) {
     return Object.prototype.toString.call(option);
   }
+
+  // 获取当前是星期几
+  // 返回: "星期一"
+  static getWeek(date: string) {
+    let week = moment(date).day();
+    switch (week) {
+      case 1:
+        return '周一';
+      case 2:
+        return '周二';
+      case 3:
+        return '周三';
+      case 4:
+        return '周四';
+      case 5:
+        return '周五';
+      case 6:
+        return '周六';
+      case 0:
+        return '周日';
+    }
+  }
+
+  /**
+   * 动态拼接url路径参数,
+   *
+   * obj = {
+   *  username: "执念",
+   *  password: "123"
+   * }
+   * @param obj  username=执念&password=123&...
+   */
+  static getUrlParams(obj: { [x: string]: any }) {
+    let result = '';
+    let item;
+    for (item in obj) {
+      if (obj[item] && String(obj[item])) {
+        result += `&${item}=${obj[item]}`;
+      }
+    }
+    if (result) {
+      result = '?' + result.slice(1);
+    }
+    return result;
+  }
 }
 
 export { Utils };
