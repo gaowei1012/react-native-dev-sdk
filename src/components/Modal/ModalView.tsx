@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Animated } from 'react-native';
 import { ViewStyle, StyleProp } from 'react-native';
 
-interface ModalViewsProps {
+type ModalViewsProps =  {
   propStyle?: StyleProp<ViewStyle>;
 }
 
-const ModalViews: React.FC<ModalViewsProps> = props => {
-  const { propStyle } = props;
+const ModalViews: React.FC<ModalViewsProps> = ({ propStyle }) => {
   return (
     <Animated.View style={[propStyle]}>
       <Animated.Text>hello</Animated.Text>
@@ -15,4 +14,6 @@ const ModalViews: React.FC<ModalViewsProps> = props => {
   );
 };
 
-export default ModalViews;
+export default memo(ModalViews, () => {
+  return false;
+});

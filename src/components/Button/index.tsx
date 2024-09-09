@@ -1,10 +1,11 @@
-import React from 'react';
+import { memo } from 'react';
+import type { FC, ReactElement } from 'react';
 import { TouchableOpacity, TouchableNativeFeedback, View, Text } from 'react-native';
 import { buttonStyle } from './style';
 import { Utils } from '../../tools';
 
-type buttonType = {
-  text: string | React.ReactElement;
+type IbuttonType = {
+  text: string | ReactElement;
   onPress?: () => void;
   buttonPropsStyle?: any;
   type?: string | 'default';
@@ -14,7 +15,7 @@ const buttonOptions = {
   default: 'default',
 };
 
-const Button: React.FC<buttonType> = ({ text, onPress, buttonPropsStyle, type }) => {
+const Button: FC<IbuttonType> = ({ text, onPress, buttonPropsStyle, type }) => {
   const theme = type == 'default' ? buttonOptions[type] : '';
 
   const renderIosButton = () => (
@@ -34,4 +35,6 @@ const Button: React.FC<buttonType> = ({ text, onPress, buttonPropsStyle, type })
   return <>{Utils.platform() ? renderIosButton() : renderAndroidButton()}</>;
 };
 
-export default Button;
+export default memo(Button, () => {
+  return false;
+});

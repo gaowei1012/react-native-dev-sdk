@@ -1,14 +1,14 @@
-import React from 'react';
+import { memo } from 'react';
+import type { FC } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import styles from './style';
 
-interface LoadingProps {
+type ILoadingProps = {
   loadingDisplay: any | 'none';
   size?: number | 'small' | 'large';
-}
+};
 
-const Loading: React.FC<LoadingProps> = props => {
-  const { size, loadingDisplay } = props;
+const Loading: FC<ILoadingProps> = ({ size, loadingDisplay }) => {
   return (
     <View style={[styles.loding_mask, { display: loadingDisplay }]}>
       <ActivityIndicator size={size} color="#fff" />
@@ -16,4 +16,6 @@ const Loading: React.FC<LoadingProps> = props => {
   );
 };
 
-export { Loading };
+export default memo(Loading, () => {
+  return false;
+});
