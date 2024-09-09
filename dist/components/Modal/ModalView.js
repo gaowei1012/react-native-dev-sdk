@@ -12,9 +12,12 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var jsx_runtime_1 = require("react/jsx-runtime");
+var react_1 = require("react");
 var react_native_1 = require("react-native");
-var ModalViews = function (props) {
-    var propStyle = props.propStyle;
+var ModalViews = function (_a) {
+    var propStyle = _a.propStyle;
     return ((0, jsx_runtime_1.jsx)(react_native_1.Animated.View, __assign({ style: [propStyle] }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Animated.Text, { children: "hello" }) })));
 };
-exports.default = ModalViews;
+exports.default = (0, react_1.memo)(ModalViews, function () {
+    return false;
+});

@@ -12,6 +12,7 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var jsx_runtime_1 = require("react/jsx-runtime");
+var react_1 = require("react");
 var react_native_1 = require("react-native");
 var style_1 = require("./style");
 var tools_1 = require("../../tools");
@@ -25,4 +26,6 @@ var Button = function (_a) {
     var renderAndroidButton = function () { return ((0, jsx_runtime_1.jsx)(react_native_1.View, __assign({ style: [style_1.buttonStyle.wrap, style_1.buttonStyle[theme], buttonPropsStyle] }, { children: (0, jsx_runtime_1.jsx)(react_native_1.TouchableNativeFeedback, __assign({ onPress: onPress }, { children: (0, jsx_runtime_1.jsx)(react_native_1.Text, { children: text }) })) }))); };
     return (0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: tools_1.Utils.platform() ? renderIosButton() : renderAndroidButton() });
 };
-exports.default = Button;
+exports.default = (0, react_1.memo)(Button, function () {
+    return false;
+});
