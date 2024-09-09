@@ -1,3 +1,3 @@
-import React from 'react';
-declare const TopNavigator: React.FC<ITopNavigator.topNavigationBarProps>;
-export default TopNavigator;
+/// <reference types="react" />
+declare const _default: import("react").NamedExoticComponent<ITopNavigator.topNavigationBarProps>;
+export default _default;

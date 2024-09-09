@@ -1,7 +1,7 @@
 import React from 'react';
 import { ViewStyle, StyleProp } from 'react-native';
-interface ModalViewsProps {
+type ModalViewsProps = {
     propStyle?: StyleProp<ViewStyle>;
-}
-declare const ModalViews: React.FC<ModalViewsProps>;
-export default ModalViews;
+};
+declare const _default: React.NamedExoticComponent<ModalViewsProps>;
+export default _default;
