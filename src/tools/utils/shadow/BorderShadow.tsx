@@ -6,7 +6,7 @@
  * @FilePath: /react-native-dev-sdk/src/tools/utils/shadow/BorderShadow.tsx
  * @Description:
  */
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { View } from 'react-native';
 import Svg, { Rect, Defs, LinearGradient, Stop } from 'react-native-svg';
 

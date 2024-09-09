@@ -1,8 +1,9 @@
-import React from 'react';
+import { memo } from 'react';
+import type { FC } from 'react';
 import { styles } from './style/index';
 import { View, Text, StatusBar } from 'react-native';
 
-const TopNavigator: React.FC<ITopNavigator.topNavigationBarProps> = ({ style, statusBar, rightButton, titleLayoutStyle, leftButton, hide, titleView, fontSize, title }) => {
+const TopNavigator: FC<ITopNavigator.topNavigationBarProps> = ({ style, statusBar, rightButton, titleLayoutStyle, leftButton, hide, titleView, fontSize, title }) => {
   const getButtonElement = (ele: any) => <View style={styles.navBarButton}>{ele ? ele : null}</View>;
 
   return (
@@ -31,4 +32,6 @@ const TopNavigator: React.FC<ITopNavigator.topNavigationBarProps> = ({ style, st
   );
 };
 
-export default TopNavigator;
+export default memo(TopNavigator, () => {
+  return false;
+});
